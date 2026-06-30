@@ -1,0 +1,36 @@
+@use "variables";
+
+.top-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background: variables.$top-bar-color;
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: inherit;
+
+    img {
+      width: 9em;
+      height: 8em;
+      border-radius: 50%;
+    }
+
+    span {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+
+
+  }
+}

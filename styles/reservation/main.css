@@ -1,0 +1,50 @@
+.btn-light {
+  background-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background: #fff;
+}
+.top-header .logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+.top-header .logo-link img {
+  width: 9em;
+  height: 8em;
+  border-radius: 50%;
+}
+.top-header .logo-link span {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.top-header .main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/*# sourceMappingURL=main.css.map */

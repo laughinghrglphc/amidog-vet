@@ -1,0 +1,5 @@
+@use "variables";
+
+.btn-light {
+  background-color: variables.$top-bar-color;
+}

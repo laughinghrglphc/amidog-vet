@@ -1,0 +1,132 @@
+@use 'variables' as v;
+
+/* =======================================================
+   Site Header
+   ======================================================= */
+.site-header {
+  background: v.$white;
+  border-bottom: 1px solid #f0ead8;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 16px;
+  }
+
+  &__logo img {
+    height: 128px;
+    width: auto;
+    object-fit: contain;
+    }
+
+  &__inner {
+    padding-block: 10px;
+    }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: v.$bp-md) {
+      display: none;
+    }
+  }
+}
+
+/* =======================================================
+   Hero section
+   ======================================================= */
+.hero {
+  flex: 1;
+  background: linear-gradient(135deg, #fff3c5 0%, #fde89a 30%, #f9a84a 65%, #f87823 100%);
+  padding: 40px 48px 48px;
+
+  @media (max-width: v.$bp-md) {
+    padding: 24px;
+  }
+
+  &__panel {
+    max-width: 1300px;
+    margin-inline: auto;
+    background: linear-gradient(130deg, #fde27a 0%, #fdb660 40%, #f87823 100%);
+    border-radius: v.$radius-lg;
+    padding: 52px 56px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 0.85fr;
+    gap: 36px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: v.$bp-lg) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "content form"
+        "content visual";
+    }
+
+    @media (max-width: v.$bp-md) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "content"
+        "form"
+        "visual";
+      padding: 36px 28px;
+    }
+  }
+
+  &__content {
+    @media (max-width: v.$bp-lg) { grid-area: content; }
+  }
+
+  &__form-card {
+    @media (max-width: v.$bp-lg) { grid-area: form; }
+  }
+
+  &__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: v.$bp-lg) { grid-area: visual; }
+  }
+}
+
+/* =======================================================
+   Site Footer
+   ======================================================= */
+.site-footer {
+  background: linear-gradient(100deg, #fde27a 0%, #f9a84a 50%, #f87823 100%);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-block: 26px;
+  }
+
+  &__address {
+    font-size: 0.9rem;
+    color: v.$text-dark;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: v.$text-dark;
+
+    img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+  }
+}

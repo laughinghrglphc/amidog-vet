@@ -8,5 +8,37 @@ $tertiary-color: #E5646D;     // Coral - sin uso por ahora
 
 $highlight-color: #FAD64A;    // decoraciones / contrastes
 
-$formbg: #FCFCFC;    // fondo form
-$cardbg: #F7F7F7;    // cards / pasos form
+$formbg: #FCFCFC;             // fondo form
+$cardbg: #F7F7F7;             // cards / pasos form
+
+$text-dark: #212529;
+$text-muted: #6c757d;
+$text-placeholder: #adb5bd;
+$white: #ffffff;
+$border-color: #dee2e6;
+
+/* =======================================================
+   Tipografía
+   ======================================================= */
+$font-main: 'Poppins', 'Segoe UI', sans-serif;
+
+/* =======================================================
+   Border radius
+   ======================================================= */
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 24px;
+$radius-pill: 999px;
+
+/* =======================================================
+   Sombras
+   ======================================================= */
+$shadow-card: 0 8px 32px rgba(0, 0, 0, 0.12);
+$shadow-input: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+/* =======================================================
+   Breakpoints
+   ======================================================= */
+$bp-lg: 1100px;
+$bp-md: 768px;
+$bp-sm: 480px;

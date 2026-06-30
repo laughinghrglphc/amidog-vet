@@ -1,0 +1,414 @@
+@use 'variables' as v;
+
+/* =======================================================
+   Nav
+   ======================================================= */
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: v.$text-dark;
+  transition: color 0.2s;
+
+  &:hover {
+    color: v.$accent-color;
+  }
+}
+
+.btn-nav {
+  background: v.$accent-color;
+  color: v.$white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 22px;
+  border-radius: v.$radius-pill;
+  transition: background 0.2s, opacity 0.2s;
+
+  &:hover {
+    opacity: 0.88;
+  }
+}
+
+/* =======================================================
+   Welcome / content column
+   ======================================================= */
+.welcome {
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: v.$white;
+    color: v.$text-dark;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: v.$radius-pill;
+    margin-bottom: 20px;
+  }
+
+  &__heading {
+    font-size: clamp(2rem, 3.5vw, 2.7rem);
+    font-weight: 800;
+    color: v.$text-dark;
+    line-height: 1.15;
+    margin-bottom: 16px;
+
+    span.highlight {
+      display: block;
+      color: v.$accent-color;
+    }
+  }
+
+  &__paw {
+    color: v.$text-dark;
+    opacity: 0.65;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+
+    &--sm { width: 16px; height: 16px; }
+    &--lg { width: 28px; height: 28px; }
+  }
+
+  &__paw-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 6px 0;
+  }
+
+  &__description {
+    font-size: 0.97rem;
+    font-weight: 700;
+    color: v.$text-dark;
+    line-height: 1.5;
+    margin-block: 20px 28px;
+    max-width: 300px;
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* =======================================================
+   Feature item
+   ======================================================= */
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: v.$text-dark;
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: v.$accent-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: v.$white;
+    font-size: 1rem;
+
+    &--outline {
+      background: transparent;
+      border: 2px solid v.$accent-color;
+      color: v.$accent-color;
+    }
+  }
+}
+
+/* =======================================================
+   Login card
+   ======================================================= */
+.login-card {
+  background: v.$formbg;
+  border-radius: v.$radius-md;
+  padding: 36px 32px;
+  box-shadow: v.$shadow-card;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: v.$text-dark;
+    margin-bottom: 6px;
+  }
+
+  &__subtitle {
+    font-size: 0.88rem;
+    color: v.$text-muted;
+    margin-bottom: 28px;
+  }
+}
+
+/* =======================================================
+   Form elements
+   ======================================================= */
+.form-group {
+  margin-bottom: 20px;
+
+  &__label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: v.$text-dark;
+    margin-bottom: 8px;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: v.$white;
+  border: 1.5px solid v.$border-color;
+  border-radius: v.$radius-sm;
+  padding: 0 14px;
+  height: 48px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus-within {
+    border-color: v.$accent-color;
+    box-shadow: 0 0 0 3px rgba(24, 170, 145, 0.12);
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: v.$accent-color;
+  }
+
+  &__icon--right {
+    margin-left: auto;
+    cursor: pointer;
+    color: v.$text-muted;
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: v.$text-dark;
+    }
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.9rem;
+    color: v.$text-dark;
+    min-width: 0;
+
+    &::placeholder {
+      color: v.$text-placeholder;
+    }
+  }
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: v.$text-dark;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid v.$border-color;
+    border-radius: 3px;
+    accent-color: v.$accent-color;
+    cursor: pointer;
+  }
+}
+
+.forgot-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: v.$accent-color;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+/* =======================================================
+   Buttons
+   ======================================================= */
+.btn-primary {
+  display: block;
+  width: 100%;
+  background: v.$accent-color;
+  color: v.$white;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 13px;
+  border-radius: v.$radius-pill;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s;
+
+  &:hover {
+    opacity: 0.88;
+  }
+}
+
+.btn-secondary {
+  display: block;
+  width: 100%;
+  background: v.$white;
+  color: v.$accent-color;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px;
+  border-radius: v.$radius-pill;
+  border: 2px solid v.$accent-color;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: v.$accent-color;
+    color: v.$white;
+  }
+}
+
+/* =======================================================
+   Divider
+   ======================================================= */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 20px;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: v.$border-color;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: v.$border-color;
+    margin-inline: 10px;
+  }
+}
+
+.form-footer-text {
+  text-align: center;
+  font-size: 0.88rem;
+  color: v.$text-muted;
+  margin-bottom: 14px;
+}
+
+/* =======================================================
+   Visual column (animal photo + circle)
+   ======================================================= */
+.animal-visual {
+  position: relative;
+  width: 260px;
+  height: 260px;
+
+  &__ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 4px solid v.$secondary-color;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid v.$white;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background: v.$white;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+  }
+
+  &__star {
+    position: absolute;
+    color: v.$highlight-color;
+    font-size: 1.8rem;
+    z-index: 3;
+    line-height: 1;
+
+    &--top-left {
+      top: 6px;
+      left: -14px;
+    }
+
+    &--bottom-right {
+      bottom: 12px;
+      right: -14px;
+    }
+  }
+}
+
+
+
+/* =======================================================
+   Inline paw clusters
+   ======================================================= */
+.paw-cluster {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #1a1a1a;
+  opacity: 0.5;
+
+  &--above {
+    margin-bottom: 6px;
+  }
+
+  &--below {
+    margin-top: 6px;
+  }
+}
+
+.paw {
+  display: block;
+  flex-shrink: 0;
+
+  &--lg  { width: 24px; height: 24px; transform: rotate(-15deg); }
+  &--sm  { width: 17px; height: 17px; transform: rotate(10deg); }
+  &--xs  { width: 13px; height: 13px; transform: rotate(25deg); }
+}

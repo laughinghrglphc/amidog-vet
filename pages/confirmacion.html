@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Cita - AmiDog</title>
+    </head>
+<body>
+
+    <section id="confirmacion-reserva" class="confirmacion-vista">
+      <header class="confirmacion-encabezado">
+        <h1 class="confirmacion-titulo">Agenda tu cita para tu mascota</h1>
+        <div class="confirmacion-pasos">
+          </div>
+      </header>
+      <div class="confirmacion-contenido">
+      
+      <!-- Columna Izquierda: Resumen de la cita -->
+      <main class="confirmacion-detalles">
+        <h2 class="confirmacion-subtitulo">Confirma tu cita</h2>
+        <p class="confirmacion-descripcion">Revisa que los datos estén correctos antes de finalizar la reserva.</p>
+        
+        <article class="confirmacion-bloque">
+          <h3 class="confirmacion-bloque-titulo">Resumen de la atención</h3>
+          
+          <div class="confirmacion-grid-datos">
+            <div class="dato-item">
+              <span class="dato-etiqueta">Mascota:</span>
+              <span class="dato-valor" id="resumen-mascota">Perro / Gato</span>
+            </div>
+            
+            <div class="dato-item">
+              <span class="dato-etiqueta">Servicio:</span>
+              <span class="dato-valor" id="resumen-servicio">Consulta general</span>
+            </div>
+            
+            <div class="dato-item">
+              <span class="dato-etiqueta">Profesional:</span>
+              <span class="dato-valor" id="resumen-profesional">Sin preferencia</span>
+            </div>
+          </div>
+        </article>
+        <article class="confirmacion-bloque">
+          <h3 class="confirmacion-bloque-titulo">Horario seleccionado</h3>
+          
+          <div class="confirmacion-grid-datos">
+            <div class="dato-item">
+              <span class="dato-etiqueta">Fecha:</span>
+              <span class="dato-valor" id="resumen-fecha">12 / 06 / 2026</span>
+            </div>
+            
+            <div class="dato-item">
+              <span class="dato-etiqueta">Hora:</span>
+              <span class="dato-valor" id="resumen-hora">09:00</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="confirmacion-bloque">
+          <h3 class="confirmacion-bloque-titulo">Datos de contacto</h3>
+          
+          <div class="confirmacion-lista-datos">
+            <div class="dato-item-fila">
+              <span class="dato-etiqueta">Nombre:</span>
+              <span class="dato-valor" id="resumen-nombre">Nombre y apellido</span>
+            </div>
+            
+            <div class="dato-item-fila">
+              <span class="dato-etiqueta">Teléfono:</span>
+              <span class="dato-valor" id="resumen-telefono">+56 9 1234 5678</span>
+            </div>
+
+            <div class="dato-item-fila">
+              <span class="dato-etiqueta">Correo:</span>
+              <span class="dato-valor" id="resumen-correo">nombre@correo.cl</span>
+            </div>
+          </div>
+        </article>
+        <div class="confirmacion-aviso">
+          <img src="../assets/whatsapp-icon.svg" alt="WhatsApp" class="aviso-icono">
+          <p class="aviso-texto">Te enviaremos la confirmación por WhatsApp o correo electrónico</p>
+        </div>
+
+        <div class="confirmacion-acciones">
+          <button type="button" class="btn-secundario" id="btn-volver">
+            &larr; Volver al horario
+          </button>
+          <button type="button" class="btn-primario" id="btn-confirmar">
+            Confirmar reserva
+          </button>
+        </div>
+      </main>
+
+      <!-- Columna Derecha: Tarjeta naranja de beneficios -->
+      <aside class="confirmacion-tarjeta">
+     <h3 class="tarjeta-titulo">Tu cita en AmiDog</h3>
+        
+        <div class="tarjeta-imagen-contenedor">
+          <img src="../assets/mascotas-circulo.png" alt="Mascotas AmiDog" class="tarjeta-imagen">
+        </div>
+
+        <ul class="tarjeta-lista-beneficios">
+          <li class="beneficio-item">
+            <img src="../assets/icon-check.svg" alt="Check" class="beneficio-icono"> Confirmación por WhatsApp o correo
+          </li>
+          <li class="beneficio-item">
+            <img src="../assets/icon-check.svg" alt="Check" class="beneficio-icono"> Reagenda fácilmente si lo necesitas
+          </li>
+          <li class="beneficio-item">
+            <img src="../assets/icon-check.svg" alt="Check" class="beneficio-icono"> Atención cercana y sin complicaciones
+          </li>
+        </ul>
+
+        <div class="tarjeta-caja-seguridad">
+          <h4 class="caja-seguridad-titulo">Reserva rápida y segura</h4>
+          <p class="caja-seguridad-texto">Tus datos están protegidos y tu mascota recibirá la mejor atención.</p>
+        </div>
+      </aside>
+
+    </div>
+    </section>
+
+</body>
+</html>

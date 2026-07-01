@@ -1,0 +1,224 @@
+/* ============================================
+   AmiDog Veterinaria — Estilos Calendario
+   ============================================ */
+
+/* --- Variables de color --- */
+:root {
+  --amidog-orange: #f97316;
+  --amidog-orange-dark: #ea6c0b;
+  --amidog-green: #16a34a;
+  --amidog-green-light: #dcfce7;
+  --amidog-bg: #f8fafc;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--amidog-bg);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Colores de texto personalizados --- */
+.text-amidog-orange { color: var(--amidog-orange) !important; }
+.text-amidog-green  { color: var(--amidog-green)  !important; }
+
+/* --- Botones AmiDog --- */
+.btn-amidog {
+  background-color: var(--amidog-orange);
+  border-color: var(--amidog-orange);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+}
+.btn-amidog:hover,
+.btn-amidog:focus {
+  background-color: var(--amidog-orange-dark);
+  border-color: var(--amidog-orange-dark);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.btn-amidog:disabled {
+  background-color: #fdba74;
+  border-color: #fdba74;
+  color: #fff;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-outline-amidog {
+  color: var(--amidog-orange);
+  border-color: var(--amidog-orange);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+.btn-outline-amidog:hover,
+.btn-outline-amidog:focus {
+  background-color: var(--amidog-orange);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* --- Hero / Header --- */
+.hero-amidog {
+  background: linear-gradient(135deg, var(--amidog-orange) 0%, #fb923c 60%, var(--amidog-green) 100%);
+  color: #fff;
+}
+
+/* --- Stepper de pasos --- */
+.pasos-agenda {
+  gap: 2rem;
+}
+
+.paso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  opacity: 0.55;
+}
+
+.paso-activo,
+.paso-completo {
+  opacity: 1;
+}
+
+.paso-circulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  transition: background 0.2s;
+}
+
+.paso-activo .paso-circulo {
+  background: #fff;
+  color: var(--amidog-orange);
+  border-color: #fff;
+}
+
+.paso-completo .paso-circulo {
+  background: var(--amidog-green);
+  border-color: var(--amidog-green);
+  color: #fff;
+}
+
+.paso small {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* --- Tarjetas --- */
+.card-agenda {
+  border-radius: 1rem !important;
+}
+
+.card-info-amidog {
+  border-radius: 1rem !important;
+  background: linear-gradient(160deg, #fffbf7 0%, var(--amidog-green-light) 100%);
+}
+
+/* --- Icono resumen --- */
+.resumen-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  background: var(--amidog-orange);
+  color: #fff;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* --- Caja del calendario --- */
+.calendario-box {
+  min-height: 280px;
+}
+
+/* --- Días del calendario --- */
+.dia-btn {
+  width: 100%;
+  aspect-ratio: 1;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dia-btn:hover:not(:disabled) {
+  background: #ffedd5;
+  color: var(--amidog-orange);
+  transform: scale(1.1);
+}
+
+.dia-btn.seleccionado {
+  background: var(--amidog-orange);
+  color: #fff;
+  font-weight: 700;
+}
+
+.dia-btn:disabled {
+  color: #d1d5db;
+  cursor: default;
+}
+
+/* --- Horarios --- */
+.horario-btn {
+  width: 100%;
+  padding: 0.5rem 0.25rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.6rem;
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #374151;
+  transition: border-color 0.15s, background 0.15s, color 0.15s, transform 0.1s;
+  cursor: pointer;
+}
+
+.horario-btn:hover {
+  border-color: var(--amidog-orange);
+  color: var(--amidog-orange);
+  transform: translateY(-1px);
+}
+
+.horario-btn.seleccionado {
+  background: var(--amidog-orange);
+  border-color: var(--amidog-orange);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* --- Avatar mascota --- */
+.foto-mascotas {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #ffedd5, #dcfce7);
+  font-size: 2.5rem;
+  color: var(--amidog-orange);
+}
+
+/* --- Footer --- */
+.footer-amidog {
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  margin-top: auto;
+}

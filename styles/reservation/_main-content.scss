@@ -3,6 +3,7 @@ $skin: #f6e6b6;
 
 .main-content {
   width: 100%;
-  margin: 0 auto;
   background: linear-gradient(to left, $orange, $skin);
+  display: flex;
+  flex-direction: column;
 }

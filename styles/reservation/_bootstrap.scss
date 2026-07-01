@@ -2,4 +2,9 @@
 
 .btn-light {
   background-color: variables.$top-bar-color;
+  border-width: 0;
+}
+
+.col {
+  margin: 0.2em;
 }

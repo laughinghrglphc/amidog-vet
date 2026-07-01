@@ -18,6 +18,7 @@ $border: #ececec;
 
   h2{
     font-size: 2rem;
+    margin-top: .35rem;
     margin-bottom: .35rem;
   }
 
@@ -26,20 +27,6 @@ $border: #ececec;
     margin-bottom: 2rem;
   }
 
-  .contact{
-    margin-top: 3rem;
-  }
-
-  .grid-2{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 20px;
-  }
-
-  .field{
-    display: flex;
-    flex-direction: column;
-  }
 
   label{
     font-size: .9rem;
@@ -74,10 +61,6 @@ $border: #ececec;
 
     box-shadow:0 0 0 3px rgba(40,179,173,.15);
 
-  }
-
-  .field:last-child{
-    grid-column: 1/-1;
   }
 
   .btn-submit{

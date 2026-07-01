@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 2rem;
+  padding: 0rem 1.5rem;
   background: variables.$top-bar-color;
 
   .logo-link {
@@ -17,8 +17,8 @@
 
     img {
       width: 9em;
-      height: 8em;
-      border-radius: 50%;
+      height: 6em;
+      object-fit: cover;
     }
 
     span {
@@ -30,7 +30,5 @@
   .main-nav {
     display: flex;
     gap: 1.5rem;
-
-
   }
 }

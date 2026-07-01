@@ -5,9 +5,10 @@ $muted: #7a7a7a;
 $border: #ececec;
 
 .appointment{
-  max-width: 1200px;
+  max-width: 90%;
   margin: auto;
-  background: transparent;
+  padding: 1em;
+  background: white;
 
   display: grid;
   grid-template-columns: 2fr 360px;
@@ -93,10 +94,12 @@ $border: #ececec;
   }
 
   .summary-card{
-
+    font-size: 0.9em;
+    height: 90%;
     padding: 30px;
-
     border-radius: 24px;
+    margin-top: .35rem;
+    margin-bottom: .35rem;
 
     background: linear-gradient(
       180deg,
@@ -146,9 +149,6 @@ $border: #ececec;
     flex-direction: column;
 
     gap: 18px;
-
-    margin-bottom: 32px;
-
     text-align: left;
   }
 
@@ -242,11 +242,4 @@ $border: #ececec;
     padding: 20px;
 
   }
-
-  .grid-2{
-
-    grid-template-columns: 1fr;
-
-  }
-
 }

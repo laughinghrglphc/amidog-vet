@@ -58,3 +58,17 @@
     color: #222;
   }
 }
+
+@media (max-width: 768px) {
+  .page-information {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .title-and-summary {
+    text-align: center;
+  }
+}

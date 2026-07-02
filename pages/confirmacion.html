@@ -4,121 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmación de Cita - AmiDog</title>
-    </head>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
 <body>
+  <div class="confirmacion-page">
+    <header class="site-header">
+      <a class="site-header__brand" href="../index.html" aria-label="AmiDog Veterinaria">
+        <img src="../assets/img/LogoAmidog.png" alt="AmiDog Veterinaria">
+      </a>
 
-    <section id="confirmacion-reserva" class="confirmacion-vista">
+      <nav class="site-header__nav" aria-label="Navegación principal">
+        <a href="../index.html">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Contacto</a>
+        <a class="site-header__cta" href="#">Pedir hora</a>
+      </nav>
+    </header>
+
+    <main id="confirmacion-reserva" class="confirmacion-vista">
       <header class="confirmacion-encabezado">
-        <h1 class="confirmacion-titulo">Agenda tu cita para tu mascota</h1>
-        <div class="confirmacion-pasos">
-          </div>
+        <div>
+          <h1 class="confirmacion-titulo">
+            <span class="titulo-paw" aria-hidden="true"></span>
+            Agenda tu cita para tu mascota
+            <span class="titulo-paw titulo-paw--small" aria-hidden="true"></span>
+          </h1>
+          <p class="confirmacion-intro">Completa los datos y te contactaremos para confirmar la hora.</p>
+        </div>
+
+        <ol class="confirmacion-pasos" aria-label="Progreso de reserva">
+          <li class="paso paso--completo">
+            <span class="paso__circulo" aria-hidden="true">✓</span>
+            <span>Datos</span>
+          </li>
+          <li class="paso paso--completo">
+            <span class="paso__circulo" aria-hidden="true">✓</span>
+            <span>Horario</span>
+          </li>
+          <li class="paso paso--activo">
+            <span class="paso__circulo" aria-hidden="true">✓</span>
+            <span>Confirmación</span>
+          </li>
+        </ol>
       </header>
+
       <div class="confirmacion-contenido">
-      
-      <!-- Columna Izquierda: Resumen de la cita -->
-      <main class="confirmacion-detalles">
-        <h2 class="confirmacion-subtitulo">Confirma tu cita</h2>
-        <p class="confirmacion-descripcion">Revisa que los datos estén correctos antes de finalizar la reserva.</p>
-        
-        <article class="confirmacion-bloque">
-          <h3 class="confirmacion-bloque-titulo">Resumen de la atención</h3>
-          
-          <div class="confirmacion-grid-datos">
-            <div class="dato-item">
-              <span class="dato-etiqueta">Mascota:</span>
-              <span class="dato-valor" id="resumen-mascota">Perro / Gato</span>
+        <section class="confirmacion-detalles" aria-labelledby="confirmacion-titulo">
+          <h2 class="confirmacion-subtitulo" id="confirmacion-titulo">Confirma tu cita</h2>
+          <p class="confirmacion-descripcion">Revisa que los datos estén correctos antes de finalizar la reserva.</p>
+
+          <article class="confirmacion-bloque">
+            <h3 class="confirmacion-bloque-titulo">Resumen de la atención</h3>
+
+            <div class="confirmacion-grid-datos confirmacion-grid-datos--tres">
+              <div class="dato-item">
+                <span class="dato-icono dato-icono--paw" aria-hidden="true"></span>
+                <span class="dato-texto">
+                  <span class="dato-etiqueta">Mascota:</span>
+                  <span class="dato-valor" id="resumen-mascota">Perro / Gato</span>
+                </span>
+              </div>
+
+              <div class="dato-item">
+                <span class="dato-icono dato-icono--salud" aria-hidden="true"></span>
+                <span class="dato-texto">
+                  <span class="dato-etiqueta">Servicio:</span>
+                  <span class="dato-valor" id="resumen-servicio">Consulta general</span>
+                </span>
+              </div>
+
+              <div class="dato-item">
+                <span class="dato-icono" aria-hidden="true"></span>
+                <span class="dato-texto">
+                  <span class="dato-etiqueta">Profesional:</span>
+                  <span class="dato-valor" id="resumen-profesional">Sin preferencia</span>
+                </span>
+              </div>
             </div>
-            
-            <div class="dato-item">
-              <span class="dato-etiqueta">Servicio:</span>
-              <span class="dato-valor" id="resumen-servicio">Consulta general</span>
+          </article>
+
+          <article class="confirmacion-bloque">
+            <h3 class="confirmacion-bloque-titulo">Horario seleccionado</h3>
+
+            <div class="confirmacion-grid-datos confirmacion-grid-datos--dos">
+              <div class="dato-item">
+                <span class="dato-icono" aria-hidden="true"></span>
+                <span class="dato-texto">
+                  <span class="dato-etiqueta">Fecha:</span>
+                  <span class="dato-valor" id="resumen-fecha">12 / 06 / 2025</span>
+                </span>
+              </div>
+
+              <div class="dato-item">
+                <span class="dato-icono" aria-hidden="true"></span>
+                <span class="dato-texto">
+                  <span class="dato-etiqueta">Hora:</span>
+                  <span class="dato-valor" id="resumen-hora">09:00</span>
+                </span>
+              </div>
             </div>
-            
-            <div class="dato-item">
-              <span class="dato-etiqueta">Profesional:</span>
-              <span class="dato-valor" id="resumen-profesional">Sin preferencia</span>
+          </article>
+
+          <article class="confirmacion-bloque">
+            <h3 class="confirmacion-bloque-titulo">Datos de contacto</h3>
+
+            <div class="confirmacion-lista-datos">
+              <div class="dato-item dato-item--fila">
+                <span class="dato-icono" aria-hidden="true"></span>
+                <span class="dato-etiqueta">Nombre:</span>
+                <span class="dato-valor" id="resumen-nombre">Nombre y apellido</span>
+              </div>
+
+              <div class="dato-item dato-item--fila">
+                <span class="dato-icono" aria-hidden="true"></span>
+                <span class="dato-etiqueta">Teléfono:</span>
+                <span class="dato-valor" id="resumen-telefono">+56 9 1234 5678</span>
+              </div>
+
+              <div class="dato-item dato-item--fila">
+                <span class="dato-icono" aria-hidden="true"></span>
+                <span class="dato-etiqueta">Correo:</span>
+                <span class="dato-valor" id="resumen-correo">nombre@correo.cl</span>
+              </div>
             </div>
+          </article>
+
+          <div class="confirmacion-aviso">
+            <img src="../assets/img/LogoWSP.webp" alt="" class="aviso-icono" aria-hidden="true">
+            <p class="aviso-texto">Te enviaremos la confirmación por WhatsApp o correo electrónico</p>
           </div>
-        </article>
-        <article class="confirmacion-bloque">
-          <h3 class="confirmacion-bloque-titulo">Horario seleccionado</h3>
-          
-          <div class="confirmacion-grid-datos">
-            <div class="dato-item">
-              <span class="dato-etiqueta">Fecha:</span>
-              <span class="dato-valor" id="resumen-fecha">12 / 06 / 2026</span>
-            </div>
-            
-            <div class="dato-item">
-              <span class="dato-etiqueta">Hora:</span>
-              <span class="dato-valor" id="resumen-hora">09:00</span>
-            </div>
+
+          <div class="confirmacion-acciones">
+            <button type="button" class="btn btn-secundario" id="btn-volver">
+              <span aria-hidden="true">←</span>
+              Volver al horario
+            </button>
+            <button type="button" class="btn btn-primario" id="btn-confirmar">
+              Confirmar reserva
+            </button>
           </div>
-        </article>
+        </section>
 
-        <article class="confirmacion-bloque">
-          <h3 class="confirmacion-bloque-titulo">Datos de contacto</h3>
-          
-          <div class="confirmacion-lista-datos">
-            <div class="dato-item-fila">
-              <span class="dato-etiqueta">Nombre:</span>
-              <span class="dato-valor" id="resumen-nombre">Nombre y apellido</span>
-            </div>
-            
-            <div class="dato-item-fila">
-              <span class="dato-etiqueta">Teléfono:</span>
-              <span class="dato-valor" id="resumen-telefono">+56 9 1234 5678</span>
-            </div>
+        <aside class="confirmacion-tarjeta" aria-labelledby="tarjeta-titulo">
+          <h3 class="tarjeta-titulo" id="tarjeta-titulo">Tu cita en AmiDog</h3>
 
-            <div class="dato-item-fila">
-              <span class="dato-etiqueta">Correo:</span>
-              <span class="dato-valor" id="resumen-correo">nombre@correo.cl</span>
-            </div>
+          <div class="tarjeta-imagen-contenedor">
+            <span class="estrella estrella--uno" aria-hidden="true"></span>
+            <img src="../assets/img/AnimalesPrincipales.png" alt="Gatitos y cachorro de AmiDog" class="tarjeta-imagen">
+            <span class="estrella estrella--dos" aria-hidden="true"></span>
           </div>
-        </article>
-        <div class="confirmacion-aviso">
-          <img src="../assets/whatsapp-icon.svg" alt="WhatsApp" class="aviso-icono">
-          <p class="aviso-texto">Te enviaremos la confirmación por WhatsApp o correo electrónico</p>
-        </div>
 
-        <div class="confirmacion-acciones">
-          <button type="button" class="btn-secundario" id="btn-volver">
-            &larr; Volver al horario
-          </button>
-          <button type="button" class="btn-primario" id="btn-confirmar">
-            Confirmar reserva
-          </button>
-        </div>
-      </main>
+          <ul class="tarjeta-lista-beneficios">
+            <li class="beneficio-item">
+              <span class="beneficio-icono" aria-hidden="true">✓</span>
+              Confirmación por WhatsApp o correo
+            </li>
+            <li class="beneficio-item">
+              <span class="beneficio-icono" aria-hidden="true">✓</span>
+              Reagenda fácilmente si lo necesitas
+            </li>
+            <li class="beneficio-item">
+              <span class="beneficio-icono" aria-hidden="true">✓</span>
+              Atención cercana y sin complicaciones
+            </li>
+          </ul>
 
-      <!-- Columna Derecha: Tarjeta naranja de beneficios -->
-      <aside class="confirmacion-tarjeta">
-     <h3 class="tarjeta-titulo">Tu cita en AmiDog</h3>
-        
-        <div class="tarjeta-imagen-contenedor">
-          <img src="../assets/mascotas-circulo.png" alt="Mascotas AmiDog" class="tarjeta-imagen">
-        </div>
+          <div class="tarjeta-caja-seguridad">
+            <h4 class="caja-seguridad-titulo">Reserva rápida y segura</h4>
+            <p class="caja-seguridad-texto">Tus datos están protegidos y tu mascota recibirá la mejor atención.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
 
-        <ul class="tarjeta-lista-beneficios">
-          <li class="beneficio-item">
-            <img src="../assets/icon-check.svg" alt="Check" class="beneficio-icono"> Confirmación por WhatsApp o correo
-          </li>
-          <li class="beneficio-item">
-            <img src="../assets/icon-check.svg" alt="Check" class="beneficio-icono"> Reagenda fácilmente si lo necesitas
-          </li>
-          <li class="beneficio-item">
-            <img src="../assets/icon-check.svg" alt="Check" class="beneficio-icono"> Atención cercana y sin complicaciones
-          </li>
-        </ul>
-
-        <div class="tarjeta-caja-seguridad">
-          <h4 class="caja-seguridad-titulo">Reserva rápida y segura</h4>
-          <p class="caja-seguridad-texto">Tus datos están protegidos y tu mascota recibirá la mejor atención.</p>
-        </div>
-      </aside>
-
-    </div>
-    </section>
-
+    <footer class="site-footer">
+      <p>Sta Raquel 10815, 8310581 La Florida, Región Metropolitana</p>
+      <a href="#" aria-label="Instagram de AmiDog">
+        <img src="../assets/img/LogoInstagram.png" alt="" aria-hidden="true">
+        @Amidog
+      </a>
+    </footer>
+  </div>
 </body>
 </html>

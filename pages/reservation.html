@@ -9,15 +9,22 @@
     </head>
     <body>
         <header class="top-header">
-            <a class="logo-link" href="#">
-                <img src="../assets/LogoVeterinaria.png" alt="Logo veterinaria">
-            </a>
-            <nav class="main-nav">
-                <a href="/" class="btn btn-light">Inicio</a>
-                <a href="/servicios" class="btn btn-light">Servicios</a>
-                <a href="/pages/reservation.html" class="btn btn-light">Nosotros</a>
-                <a href="/contacto" class="btn btn-light">Contacto</a>
-                <a href="/pedir_hora" class="btn btn-primary">Pedir hora</a>
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand logo-link" href="#">
+                    <img src="../assets/LogoVeterinaria.png" alt="Logo veterinaria">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <div class="navbar-nav ms-auto align-items-center gap-2">
+                        <a href="/" class="btn btn-light">Inicio</a>
+                        <a href="/servicios" class="btn btn-light">Servicios</a>
+                        <a href="/pages/reservation.html" class="btn btn-light">Nosotros</a>
+                        <a href="/contacto" class="btn btn-light">Contacto</a>
+                        <a href="/pedir_hora" class="btn btn-primary">Pedir hora</a>
+                    </div>
+                </div>
             </nav>
         </header>
         <main class="main-content">
@@ -164,5 +171,6 @@
 
             </div>
         </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-3NixVnN2BSJcfFJLqRr0E7e8p0b3P8Y33y5T3QK6q8gN8IYab2SJxZ3WQ7PkIz" crossorigin="anonymous"></script>
     </body>
 </html>

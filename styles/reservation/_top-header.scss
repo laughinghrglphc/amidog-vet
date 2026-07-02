@@ -1,11 +1,9 @@
 @use "variables";
 
 .top-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0rem 1.5rem;
   background: variables.$top-bar-color;
+  border-bottom: #1a9a96 .2rem solid;
 
   .logo-link {
     display: flex;
@@ -15,19 +13,21 @@
     color: inherit;
 
     img {
-      width: 9em;
+      width: 8em;
       height: 6em;
       object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      img {
+        width: 5em;
+        height: 4em;
+      }
     }
 
     span {
       font-size: 1.5rem;
       font-weight: 700;
     }
-  }
-
-  .main-nav {
-    display: flex;
-    gap: 1.5rem;
   }
 }

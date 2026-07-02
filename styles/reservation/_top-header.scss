@@ -14,14 +14,14 @@
 
     img {
       width: 8em;
-      height: 6em;
+      height: 4em;
       object-fit: cover;
     }
 
     @media (max-width: 768px) {
       img {
-        width: 5em;
-        height: 4em;
+        width: 6em;
+        height: 5em;
       }
     }
 

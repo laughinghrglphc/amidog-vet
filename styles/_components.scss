@@ -1,43 +1,27 @@
-.main-nav {
-  display: flex;
-  gap: 20px;
-
-  a {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    transition: opacity 0.2s;
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-}
-
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  border-radius: 30px;
+  border-radius: 13px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 20px;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.2s ease;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 37, 37, 0.16);
   }
 }
 
 .btn-primary {
-  background-color: $accent-color;
+  background: linear-gradient(90deg, #00a896 0%, #0fa29c 100%);
   color: #fff;
 }
 
 .btn-secondary {
-  background-color: $secondary-color;
-  color: #fff;
+  background-color: #fcfcfc;
+  color: #000000;
 }
 
 .hero {
@@ -47,16 +31,17 @@
 
   h1 {
     font-size: 42px;
+    font-weight: 700;
     margin-bottom: 16px;
 
     span {
-      color: $secondary-color;
+      color: #00a896;
     }
   }
 
   p {
     font-size: 18px;
-    color: #555;
+    color: #252525;
     margin-bottom: 32px;
   }
 }
@@ -66,24 +51,30 @@
   text-align: center;
 
   h2 {
-    font-size: 32px;
+    font-size: 34px;
+    font-weight: 700;
     margin-bottom: 40px;
-    color: #222;
+    color: #252525;
   }
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+  gap: 45px;
 }
 
 .service-card {
-  background-color: $cardbg;
-  border-radius: 25px;
+  background-color: #ffffff;
+  border-radius: 26px;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(37, 37, 37, 0.15);
+  }
 
   .icon {
     font-size: 40px;
@@ -93,7 +84,7 @@
   h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: #222;
+    color: #252525;
   }
 
   p {
@@ -103,13 +94,14 @@
 }
 
 .cta {
-  background-color: $accent-color;
+  background-color: #00a896;
   color: #fff;
   text-align: center;
   padding: 60px 20px;
 
   h2 {
     font-size: 32px;
+    font-weight: 700;
     margin-bottom: 12px;
   }
 
@@ -121,6 +113,6 @@
 
   .btn-secondary {
     background-color: #fff;
-    color: $accent-color;
+    color: #00a896;
   }
 }

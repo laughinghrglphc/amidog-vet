@@ -1,7 +1,3 @@
----
-language: es
-date: 2026-06-30
----
 # AMIDOG VET
 
 AMIDOG VET es un sistema de administración para una veterinaria, la cual ofrece

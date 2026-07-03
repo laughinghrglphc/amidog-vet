@@ -1,12 +1,24 @@
-/* =======================================================
-   Colores
-   ======================================================= */
-$primary-color: #FFF1C0;      // Crema - fondo
-$secondary-color: #F87823;    // Naranjo - acentos
-$accent-color: #18AA91;       // Turquesa - botones
-$tertiary-color: #E5646D;     // Coral - sin uso por ahora
+// Colores AmiDog
+$primary-color: #fff1c0;
+$secondary-color: #f87823;
+$accent-color: #18aa91;
+$tertiary-color: #e5646d;
+$highlight-color: #fad64a;
+$formbg: #fcfcfc;
+$cardbg: #f7f7f7;
 
-$highlight-color: #FAD64A;    // decoraciones / contrastes
+// Texto
+$text-color: #2a2a2a;
+$text-muted: #6b6b6b;
 
-$formbg: #FCFCFC;    // fondo form
-$cardbg: #F7F7F7;    // cards / pasos form
+// Tipografia
+$font-main: "Inter", system-ui, sans-serif;
+
+// Layout
+$container: 1180px;
+$radius: 20px;
+$radius-sm: 12px;
+
+// Breakpoints
+$tablet: 768px;
+$desktop: 960px;

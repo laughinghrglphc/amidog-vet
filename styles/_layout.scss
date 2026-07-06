@@ -25,28 +25,14 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   flex-shrink: 0;
 }
 
-.logo__nombre {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
-}
-
-.logo__nombre strong {
-  font-size: 1.05rem;
-  font-weight: 900;
-  color: $secondary-color;
-  letter-spacing: 0.04em;
-}
-
-.logo__nombre small {
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: $accent-color;
+.logo__img {
+  height: clamp(48px, 8vw, 64px);
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .nav {

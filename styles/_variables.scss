@@ -10,3 +10,27 @@ $highlight-color: #FAD64A;    // decoraciones / contrastes
 
 $formbg: #FCFCFC;    // fondo form
 $cardbg: #F7F7F7;    // cards / pasos form
+
+/* -------------------------------------------------------
+   Agregados: colores usados en la vista de Inicio
+   NOTA: $teal-color (#00a896) es distinto de $accent-color
+   (#18AA91). Se agrega aparte para no pisar el valor
+   existente; conviene unificar cuando se pueda.
+   ------------------------------------------------------- */
+$teal-color: #00a896;         // Verde azulado usado en navbar/botones/etiquetas
+$teal-color-dark: #005a5a;    // Hover de botones primarios
+$page-bg: #ffb066;            // Fondo naranja suave general del body
+$text-dark: #252525;          // Texto principal oscuro
+$white: #ffffff;
+$off-white: #fcfcfc;          // Fondo navbar / botón secundario
+
+/* =======================================================
+   Tipografía
+   ======================================================= */
+$font-family-base: "Inter", sans-serif;
+
+/* =======================================================
+   Breakpoints
+   ======================================================= */
+$bp-tablet: 1100px;
+$bp-mobile: 768px;

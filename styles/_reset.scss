@@ -1,33 +1,40 @@
+@use "variables";
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+/* ===============================================
+   CONFIGURACIÓN GENERAL
+================================================ */
+
+/* Reset básico */
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  min-width: 320px;
-  font-family: "Inter", sans-serif;
-  background: #ffb066;
+    min-width: 320px;
+    font-family: variables.$font-family-base;
 }
 
+/* Element defaults */
 img {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }

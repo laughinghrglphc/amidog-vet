@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "variables";
+
 .nosotros-section {
   width: 100%;
   background: #ffb066;
@@ -200,8 +203,8 @@
         }
 
         .cyan-text { color: #00a896; }
-        .pink-text { color: $tertiary-color; }
-        .yellow-text { color: darken($highlight-color, 15%); }
+        .pink-text { color: variables.$tertiary-color; }
+        .yellow-text { color: color.adjust(variables.$highlight-color, $lightness: -15%); }
       }
     }
   }

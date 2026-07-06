@@ -1,118 +1,97 @@
+@use "variables";
+
+/* ===============================================
+   BOTONES (.btn, .btn-primary, .btn-secondary)
+   NOTA: existía una definición duplicada y con
+   estilos distintos en _layout.scss y en este
+   archivo. Se dejó una sola versión (la que
+   coincide con el diseño final del banner).
+================================================ */
 .btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 13px;
-  font-weight: bold;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(37, 37, 37, 0.16);
-  }
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, #00a896 0%, #0fa29c 100%);
-  color: #fff;
-}
-
-.btn-secondary {
-  background-color: #fcfcfc;
-  color: #000000;
-}
-
-.hero {
-  background-color: $primary-color;
-  text-align: center;
-  padding: 80px 20px;
-
-  h1 {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 16px;
-
-    span {
-      color: #00a896;
-    }
-  }
-
-  p {
-    font-size: 18px;
-    color: #252525;
-    margin-bottom: 32px;
-  }
-}
-
-.services {
-  padding: 60px 20px;
-  text-align: center;
-
-  h2 {
-    font-size: 34px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: #252525;
-  }
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 45px;
-}
-
-.service-card {
-  background-color: #ffffff;
-  border-radius: 26px;
-  padding: 30px 20px;
-  text-align: center;
-  transition: all 0.2s ease;
-
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 25px rgba(37, 37, 37, 0.15);
-  }
-
-  .icon {
-    font-size: 40px;
-    margin-bottom: 16px;
-  }
-
-  h3 {
+    min-width: 175px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+    border: none;
+    border-radius: 13px;
     font-size: 20px;
-    margin-bottom: 10px;
-    color: #252525;
-  }
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
 
-  p {
-    font-size: 14px;
-    color: #666;
-  }
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(37, 37, 37, 0.16);
+    }
+
+    &-primary {
+        color: variables.$white;
+        background: linear-gradient(90deg, variables.$teal-color 0%, #0fa29c 100%);
+    }
+
+    &-secondary {
+        color: #000000;
+        background: variables.$off-white;
+    }
 }
 
-.cta {
-  background-color: #00a896;
-  color: #fff;
-  text-align: center;
-  padding: 60px 20px;
-
-  h2 {
-    font-size: 32px;
+/* ===============================================
+   ETIQUETA / BADGE (.etiqueta-veterinaria)
+   NOTA: mismo caso, había dos versiones distintas.
+   Se conservó la que coincide con lo usado en el
+   banner (fondo blanco + texto turquesa).
+================================================ */
+.etiqueta-veterinaria {
+    display: inline-block;
+    padding: 9px 20px;
+    border-radius: 30px;
+    color: variables.$teal-color;
+    background: variables.$white;
+    font-size: 14px;
     font-weight: 700;
-    margin-bottom: 12px;
-  }
+}
 
-  p {
-    font-size: 16px;
-    margin-bottom: 28px;
-    opacity: 0.9;
-  }
+/* ===============================================
+   TARJETA DE SERVICIO (.tarjeta-servicio)
+================================================ */
+.tarjeta-servicio {
+    min-height: 220px;
+    padding: 20px 25px 30px;
+    text-align: center;
+    background: variables.$white;
+    border-radius: 26px;
+    transition: all 0.2s ease;
 
-  .btn-secondary {
-    background-color: #fff;
-    color: #00a896;
-  }
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(37, 37, 37, 0.15);
+    }
+
+    .icono-servicio {
+        width: 63px;
+        height: 63px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        border-radius: 50%;
+        background: #b5f0f0;
+        font-size: 31px;
+    }
+
+    h3 {
+        margin-top: 20px;
+        color: variables.$text-dark;
+        font-size: 23px;
+        font-weight: 700;
+    }
+
+    p {
+        margin-top: 16px;
+        color: variables.$text-dark;
+        font-size: 17px;
+        font-weight: 500;
+    }
 }

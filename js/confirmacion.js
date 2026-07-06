@@ -18,27 +18,7 @@
     "resumen-correo": ["correo", "email", "mail"],
   };
 
-  const NESTED_DATA_KEYS = ["contacto", "cliente", "horario", "cita"];
-
   const getElement = (id) => document.getElementById(id);
-
-  const getStorageItem = (storage, key) => {
-    try {
-      return storage.getItem(key);
-    } catch (error) {
-      return null;
-    }
-  };
-
-  const setStorageItem = (storage, key, value) => {
-    try {
-      storage.setItem(key, value);
-    } catch (error) {
-      return false;
-    }
-
-    return true;
-  };
 
   const parseJson = (value) => {
     if (!value) return null;
@@ -55,10 +35,10 @@
 
     for (const key of keys) {
       if (source[key]) return source[key];
-
-      for (const nestedKey of NESTED_DATA_KEYS) {
-        if (source[nestedKey]?.[key]) return source[nestedKey][key];
-      }
+      if (source.contacto && source.contacto[key]) return source.contacto[key];
+      if (source.cliente && source.cliente[key]) return source.cliente[key];
+      if (source.horario && source.horario[key]) return source.horario[key];
+      if (source.cita && source.cita[key]) return source.cita[key];
     }
 
     return "";
@@ -66,7 +46,7 @@
 
   const getStoredReservation = () => {
     for (const key of STORAGE_KEYS.pending) {
-      const storedValue = parseJson(getStorageItem(sessionStorage, key)) || parseJson(getStorageItem(localStorage, key));
+      const storedValue = parseJson(sessionStorage.getItem(key)) || parseJson(localStorage.getItem(key));
       if (storedValue) return storedValue;
     }
 
@@ -123,8 +103,8 @@
 
   const goBackToSchedule = () => {
     const backButton = getElement("btn-volver");
-    const savedScheduleUrl = getStorageItem(sessionStorage, STORAGE_KEYS.scheduleUrl);
-    const fallbackUrl = backButton?.dataset.backFallback || "";
+    const savedScheduleUrl = sessionStorage.getItem(STORAGE_KEYS.scheduleUrl);
+    const fallbackUrl = backButton?.dataset.backFallback || "../index.html";
 
     if (savedScheduleUrl) {
       window.location.href = savedScheduleUrl;
@@ -132,26 +112,15 @@
     }
 
     if (document.referrer) {
-      let referrerUrl = null;
+      const referrerUrl = new URL(document.referrer);
 
-      try {
-        referrerUrl = new URL(document.referrer);
-      } catch (error) {
-        referrerUrl = null;
-      }
-
-      if (referrerUrl && referrerUrl.origin === window.location.origin && referrerUrl.href !== window.location.href) {
+      if (referrerUrl.origin === window.location.origin && referrerUrl.href !== window.location.href) {
         window.history.back();
         return;
       }
     }
 
-    if (fallbackUrl) {
-      window.location.href = fallbackUrl;
-      return;
-    }
-
-    showFeedback("No encontramos un horario anterior. Vuelve al paso de horario desde el flujo de reserva.");
+    window.location.href = fallbackUrl;
   };
 
   const confirmReservation = () => {
@@ -162,7 +131,7 @@
       confirmadoEn: new Date().toISOString(),
     };
 
-    setStorageItem(localStorage, STORAGE_KEYS.confirmed, JSON.stringify(reservation));
+    localStorage.setItem(STORAGE_KEYS.confirmed, JSON.stringify(reservation));
     document.dispatchEvent(new CustomEvent("amidog:reserva-confirmada", { detail: reservation }));
 
     if (confirmButton) {

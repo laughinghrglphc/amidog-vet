@@ -1,59 +1,15 @@
-/* =======================================================
-   Colores
-   ======================================================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@use "variables" as *;
 
-html {
-  min-height: 100%;
-}
+$confirmacion-success-color: #127F70;
+$confirmacion-primary-hover: #159D87;
+$confirmacion-divider-color: #D7D9DC;
+$confirmacion-dark-color: #26313A;
 
-body {
-  min-height: 100vh;
-  margin: 0;
-  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
-  color: #1F252B;
-  background: #111;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  border: 0;
-  font: inherit;
-}
-
-ol,
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-p {
-  margin: 0;
-}
-
-/* Componentes compartidos del sitio */
 .confirmacion-page {
   min-height: 100vh;
   padding: 16px;
-  background: linear-gradient(90deg, rgba(255, 246, 199, 0.95) 0%, rgba(255, 209, 131, 0.94) 38%, rgba(248, 120, 35, 0.96) 100%);
+  background:
+    linear-gradient(90deg, rgba(255, 246, 199, 0.95) 0%, rgba(255, 209, 131, 0.94) 38%, rgba(248, 120, 35, 0.96) 100%);
 }
 
 .site-header {
@@ -64,7 +20,7 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 18px 0 12px;
-  background: #FFFFFF;
+  background: $white;
 }
 
 .site-header__brand {
@@ -73,14 +29,15 @@ p {
   width: 184px;
   height: 56px;
   overflow: hidden;
-}
-.site-header__brand img {
-  width: 154px;
-  height: 154px;
-  max-width: none;
-  object-fit: cover;
-  object-position: left center;
-  transform: translate(0, 3px);
+
+  img {
+    width: 154px;
+    height: 154px;
+    max-width: none;
+    object-fit: cover;
+    object-position: left center;
+    transform: translate(0, 3px);
+  }
 }
 
 .site-header__nav {
@@ -89,18 +46,20 @@ p {
   gap: 34px;
   font-size: 13px;
   font-weight: 700;
-}
-.site-header__nav a {
-  transition: color 160ms ease;
-}
-.site-header__nav a:hover {
-  color: #18AA91;
+
+  a {
+    transition: color 160ms ease;
+  }
+
+  a:hover {
+    color: $accent-color;
+  }
 }
 
 .site-header__cta {
   padding: 13px 19px;
-  color: #FFFFFF;
-  background: #18AA91;
+  color: $white;
+  background: $accent-color;
   border-radius: 8px;
 }
 
@@ -131,7 +90,7 @@ p {
 
 .confirmacion-intro {
   margin-top: 4px;
-  color: #FFFFFF;
+  color: $white;
   font-size: 18px;
   font-weight: 700;
 }
@@ -142,22 +101,30 @@ p {
   height: 21px;
   flex: 0 0 auto;
   transform: rotate(-22deg);
-}
-.titulo-paw::before, .titulo-paw::after {
-  position: absolute;
-  content: "";
-  background: #2B2B2B;
-}
-.titulo-paw::before {
-  left: 8px;
-  bottom: 1px;
-  width: 11px;
-  height: 9px;
-  border-radius: 54% 46% 50% 50%;
-}
-.titulo-paw::after {
-  inset: 0;
-  background: radial-gradient(circle at 5px 8px, #2B2B2B 0 3px, transparent 3.5px), radial-gradient(circle at 10px 4px, #2B2B2B 0 3px, transparent 3.5px), radial-gradient(circle at 16px 4px, #2B2B2B 0 3px, transparent 3.5px), radial-gradient(circle at 21px 9px, #2B2B2B 0 3px, transparent 3.5px);
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    background: #2B2B2B;
+  }
+
+  &::before {
+    left: 8px;
+    bottom: 1px;
+    width: 11px;
+    height: 9px;
+    border-radius: 54% 46% 50% 50%;
+  }
+
+  &::after {
+    inset: 0;
+    background:
+      radial-gradient(circle at 5px 8px, #2B2B2B 0 3px, transparent 3.5px),
+      radial-gradient(circle at 10px 4px, #2B2B2B 0 3px, transparent 3.5px),
+      radial-gradient(circle at 16px 4px, #2B2B2B 0 3px, transparent 3.5px),
+      radial-gradient(circle at 21px 9px, #2B2B2B 0 3px, transparent 3.5px);
+  }
 }
 
 .titulo-paw--small {
@@ -183,18 +150,20 @@ p {
   font-size: 11px;
   font-weight: 900;
   text-align: center;
-}
-.paso::before {
-  position: absolute;
-  top: 17px;
-  right: calc(50% + 22px);
-  width: 54px;
-  height: 2px;
-  content: "";
-  background: #FFFFFF;
-}
-.paso:first-child::before {
-  display: none;
+
+  &::before {
+    position: absolute;
+    top: 17px;
+    right: calc(50% + 22px);
+    width: 54px;
+    height: 2px;
+    content: "";
+    background: $white;
+  }
+
+  &:first-child::before {
+    display: none;
+  }
 }
 
 .paso__circulo {
@@ -202,8 +171,8 @@ p {
   place-items: center;
   width: 44px;
   height: 44px;
-  color: #FFFFFF;
-  background: #18AA91;
+  color: $white;
+  background: $accent-color;
   border-radius: 50%;
   font-size: 24px;
   font-weight: 900;
@@ -216,7 +185,7 @@ p {
   padding: 29px clamp(20px, 2.6vw, 30px) 8px clamp(24px, 3vw, 35px);
   background: rgba(255, 255, 255, 0.96);
   border-radius: 26px;
-  box-shadow: 0 18px 45px rgba(111, 61, 12, 0.14);
+  box-shadow: $shadow-soft;
 }
 
 .confirmacion-detalles {
@@ -232,7 +201,7 @@ p {
 
 .confirmacion-descripcion {
   margin-top: 8px;
-  color: #5D6368;
+  color: $muted-color;
   font-size: 17px;
   line-height: 1.45;
 }
@@ -243,7 +212,7 @@ p {
 
 .confirmacion-bloque-titulo {
   margin-bottom: 19px;
-  color: #26313A;
+  color: $confirmacion-dark-color;
   font-size: 17px;
   font-weight: 900;
 }
@@ -260,18 +229,20 @@ p {
 .confirmacion-grid-datos--dos {
   grid-template-columns: 180px 160px;
   column-gap: 42px;
-}
-.confirmacion-grid-datos--dos .dato-item + .dato-item {
-  position: relative;
-}
-.confirmacion-grid-datos--dos .dato-item + .dato-item::before {
-  position: absolute;
-  top: -8px;
-  bottom: -8px;
-  left: -22px;
-  width: 1px;
-  content: "";
-  background: #D7D9DC;
+
+  .dato-item + .dato-item {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -8px;
+      bottom: -8px;
+      left: -22px;
+      width: 1px;
+      content: "";
+      background: $confirmacion-divider-color;
+    }
+  }
 }
 
 .dato-item {
@@ -288,7 +259,7 @@ p {
   width: 40px;
   height: 40px;
   flex: 0 0 40px;
-  background: #D9F7F0;
+  background: $soft-accent;
   border-radius: 50%;
 }
 
@@ -296,7 +267,12 @@ p {
   width: 18px;
   height: 16px;
   content: "";
-  background: radial-gradient(circle at 4px 7px, #526269 0 2px, transparent 2.5px), radial-gradient(circle at 8px 3px, #526269 0 2px, transparent 2.5px), radial-gradient(circle at 13px 4px, #526269 0 2px, transparent 2.5px), radial-gradient(circle at 15px 9px, #526269 0 2px, transparent 2.5px), radial-gradient(ellipse at 9px 12px, #526269 0 5px, transparent 5.5px);
+  background:
+    radial-gradient(circle at 4px 7px, #526269 0 2px, transparent 2.5px),
+    radial-gradient(circle at 8px 3px, #526269 0 2px, transparent 2.5px),
+    radial-gradient(circle at 13px 4px, #526269 0 2px, transparent 2.5px),
+    radial-gradient(circle at 15px 9px, #526269 0 2px, transparent 2.5px),
+    radial-gradient(ellipse at 9px 12px, #526269 0 5px, transparent 5.5px);
   transform: rotate(-20deg);
 }
 
@@ -335,7 +311,7 @@ p {
 .dato-valor {
   display: block;
   margin-top: 4px;
-  color: #26313A;
+  color: $confirmacion-dark-color;
   font-size: 13px;
   font-weight: 900;
   line-height: 1.15;
@@ -351,10 +327,11 @@ p {
   grid-template-columns: 40px 72px 1fr;
   gap: 11px;
   align-items: center;
-}
-.dato-item--fila .dato-etiqueta,
-.dato-item--fila .dato-valor {
-  margin-top: 0;
+
+  .dato-etiqueta,
+  .dato-valor {
+    margin-top: 0;
+  }
 }
 
 .confirmacion-aviso {
@@ -364,7 +341,7 @@ p {
   min-height: 39px;
   margin-top: 19px;
   padding: 7px 14px;
-  border: 1px solid #F0D292;
+  border: 1px solid $border-color;
   border-radius: 11px;
 }
 
@@ -399,42 +376,46 @@ p {
   font-size: 15px;
   font-weight: 900;
   transition: transform 160ms ease, background 160ms ease;
-}
-.btn:hover {
-  transform: translateY(-1px);
-}
-.btn:disabled {
-  cursor: default;
-  transform: none;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    cursor: default;
+    transform: none;
+  }
 }
 
 .btn-secundario {
-  color: #18AA91;
-  background: #FFFFFF;
-  border: 2px solid #18AA91;
-}
-.btn-secundario span {
-  font-size: 28px;
-  line-height: 1;
+  color: $accent-color;
+  background: $white;
+  border: 2px solid $accent-color;
+
+  span {
+    font-size: 28px;
+    line-height: 1;
+  }
 }
 
 .btn-primario {
-  color: #FFFFFF;
-  background: #18AA91;
-}
-.btn-primario:hover {
-  background: #159D87;
+  color: $white;
+  background: $accent-color;
+
+  &:hover {
+    background: $confirmacion-primary-hover;
+  }
 }
 
 .btn--confirmado,
 .btn--confirmado:hover {
-  background: #127F70;
+  background: $confirmacion-success-color;
 }
 
 .confirmacion-feedback {
   min-height: 19px;
   margin-top: 10px;
-  color: #127F70;
+  color: $confirmacion-success-color;
   font-size: 12px;
   font-weight: 800;
   opacity: 0;
@@ -464,9 +445,9 @@ p {
   width: min(242px, 86%);
   aspect-ratio: 1;
   margin: 24px auto 18px;
-  border: 3px solid #F87823;
+  border: 3px solid $secondary-color;
   border-radius: 50%;
-  background: #FFFFFF;
+  background: $white;
 }
 
 .tarjeta-imagen {
@@ -484,7 +465,7 @@ p {
   z-index: 2;
   width: 50px;
   height: 50px;
-  background: #FAD64A;
+  background: $highlight-color;
   clip-path: polygon(50% 0, 61% 34%, 98% 35%, 68% 56%, 79% 92%, 50% 69%, 21% 92%, 32% 56%, 2% 35%, 39% 34%);
 }
 
@@ -524,7 +505,7 @@ p {
   height: 28px;
   flex: 0 0 28px;
   color: #1A504E;
-  background: #D9F7F0;
+  background: $soft-accent;
   border-radius: 50%;
   font-size: 19px;
   font-weight: 900;
@@ -534,7 +515,7 @@ p {
   margin-top: 17px;
   padding: 13px 18px 16px;
   text-align: center;
-  background: #FFFFFF;
+  background: $white;
   border-radius: 8px;
 }
 
@@ -563,155 +544,193 @@ p {
   background: rgba(255, 225, 138, 0.55);
   font-size: 12px;
   font-weight: 600;
-}
-.site-footer a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 900;
-}
-.site-footer img {
-  width: 24px;
-  height: 24px;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: $white;
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (max-width: 820px) {
   .confirmacion-page {
     padding: 9px;
   }
+
   .confirmacion-vista {
     padding-inline: 32px;
   }
+
   .site-header {
     height: 58px;
     padding-inline: 8px 18px;
   }
+
   .site-header__nav {
     gap: 26px;
     font-size: 10px;
   }
+
   .site-header__cta {
     padding: 12px 16px;
   }
+
   .confirmacion-titulo {
     font-size: 20px;
   }
+
   .confirmacion-intro {
     font-size: 13px;
   }
+
   .confirmacion-pasos {
     grid-template-columns: repeat(3, 58px);
     column-gap: 16px;
   }
+
   .paso {
     font-size: 8px;
   }
+
   .paso::before {
     width: 36px;
     right: calc(50% + 17px);
   }
+
   .paso__circulo {
     width: 32px;
     height: 32px;
     font-size: 20px;
   }
+
   .confirmacion-contenido {
     border-radius: 18px;
     grid-template-columns: minmax(0, 1fr) 230px;
     gap: 34px;
     padding-block: 18px 8px;
   }
+
   .confirmacion-subtitulo {
     font-size: 25px;
   }
+
   .confirmacion-descripcion {
     font-size: 12px;
   }
+
   .confirmacion-bloque {
     margin-top: 18px;
   }
+
   .confirmacion-bloque-titulo {
     margin-bottom: 14px;
     font-size: 13px;
   }
+
   .dato-icono {
     width: 28px;
     height: 28px;
     flex-basis: 28px;
   }
+
   .dato-etiqueta {
     font-size: 8px;
   }
+
   .dato-valor {
     font-size: 10px;
   }
+
   .confirmacion-grid-datos--dos {
     grid-template-columns: 142px 120px;
     column-gap: 30px;
   }
+
   .dato-item--fila {
     grid-template-columns: 28px 54px 1fr;
   }
+
   .confirmacion-lista-datos {
     gap: 7px;
   }
+
   .confirmacion-aviso {
     min-height: 28px;
     margin-top: 14px;
     padding: 5px 12px;
   }
+
   .aviso-icono {
     width: 18px;
     height: 18px;
   }
+
   .aviso-texto {
     font-size: 9px;
   }
+
   .confirmacion-acciones {
     grid-template-columns: 1fr 1.3fr;
     gap: 16px;
     margin-top: 8px;
   }
+
   .btn {
     min-height: 32px;
     font-size: 11px;
   }
+
   .confirmacion-feedback {
     font-size: 9px;
   }
+
   .tarjeta-titulo {
     font-size: 15px;
   }
+
   .tarjeta-imagen-contenedor {
     margin-block: 16px 14px;
   }
+
   .beneficio-icono {
     width: 20px;
     height: 20px;
     flex-basis: 20px;
     font-size: 14px;
   }
+
   .tarjeta-caja-seguridad {
     margin-top: 12px;
     padding: 10px 14px;
   }
+
   .caja-seguridad-titulo {
     font-size: 10px;
   }
+
   .caja-seguridad-texto {
     font-size: 8px;
   }
+
   .site-footer {
     min-height: 36px;
     padding-inline: 18px 31px;
   }
 }
+
 @media (max-width: 720px) {
   .confirmacion-vista {
     padding-inline: 18px;
   }
+
   .confirmacion-encabezado,
   .site-header,
   .site-footer {
@@ -719,64 +738,77 @@ p {
     flex-direction: column;
     height: auto;
   }
+
   .site-header,
   .site-footer {
     gap: 14px;
     padding-block: 12px;
   }
+
   .site-header__nav {
     flex-wrap: wrap;
     gap: 14px 22px;
   }
+
   .confirmacion-contenido {
     grid-template-columns: 1fr;
   }
+
   .confirmacion-tarjeta {
     width: min(420px, 100%);
     justify-self: center;
   }
 }
+
 @media (max-width: 680px) {
   .confirmacion-page {
     padding: 10px;
   }
+
   .confirmacion-vista {
     padding: 18px 0 0;
   }
+
   .confirmacion-titulo {
     font-size: 24px;
   }
+
   .confirmacion-intro {
     font-size: 15px;
   }
+
   .confirmacion-pasos {
     grid-template-columns: repeat(3, minmax(64px, 1fr));
     width: 100%;
     column-gap: 8px;
   }
+
   .paso::before {
     width: 34px;
     right: calc(50% + 18px);
   }
+
   .confirmacion-contenido {
     padding: 24px 18px;
     border-radius: 20px;
   }
+
   .confirmacion-subtitulo {
     font-size: 28px;
   }
+
   .confirmacion-grid-datos--tres,
   .confirmacion-grid-datos--dos,
   .confirmacion-acciones {
     grid-template-columns: 1fr;
     gap: 15px;
   }
+
   .confirmacion-grid-datos--dos .dato-item + .dato-item::before {
     display: none;
   }
+
   .dato-item--fila {
     grid-template-columns: 40px 64px 1fr;
   }
 }
-
-/*# sourceMappingURL=main.css.map */

@@ -9,8 +9,8 @@
 
 // Header
 .header {
-  background: #fff;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  background: $white;
+  box-shadow: $shadow-header;
   position: relative;
   z-index: 20;
 }
@@ -72,9 +72,9 @@
   top: 100%;
   left: 0;
   right: 0;
-  background: #fff;
+  background: $white;
   padding: 1rem 1.25rem;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: $shadow-nav-mobile;
 }
 
 .nav-toggle {
@@ -95,7 +95,7 @@
   }
 }
 
-@media (min-width: $desktop) {
+@include desktop-up {
   .nav {
     display: flex;
   }
@@ -109,71 +109,6 @@
 
   .nav-toggle {
     display: none;
-  }
-}
-
-// Hero
-.hero {
-  background: linear-gradient(135deg, #ff9a3d 0%, $secondary-color 100%);
-  color: #fff;
-  padding: 2rem 0 5.5rem;
-  position: relative;
-  overflow: hidden;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -1px;
-    height: 48px;
-    background: $primary-color;
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  }
-}
-
-.hero__inner {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-}
-
-.hero__titulo {
-  font-size: clamp(1.65rem, 4vw, 2.35rem);
-  font-weight: 900;
-  margin-bottom: 0.75rem;
-}
-
-.hero__texto {
-  max-width: 42ch;
-  opacity: 0.92;
-  font-weight: 600;
-}
-
-@media (min-width: $tablet) {
-  .hero__inner {
-    grid-template-columns: 1fr auto;
-  }
-}
-
-// Main
-.main {
-  flex: 1;
-  margin-top: -3rem;
-  padding-bottom: 3rem;
-  position: relative;
-  z-index: 5;
-}
-
-.main__grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: $desktop) {
-  .main__grid {
-    grid-template-columns: 1fr 300px;
-    gap: 1.75rem;
   }
 }
 

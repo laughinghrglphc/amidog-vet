@@ -6,10 +6,21 @@ $tertiary-color: #e5646d;
 $highlight-color: #fad64a;
 $formbg: #fcfcfc;
 $cardbg: #f7f7f7;
+$white: #fff;
 
 // Texto
 $text-color: #2a2a2a;
 $text-muted: #6b6b6b;
+
+// Bordes y estados UI
+$border-color: #e8e8e8;
+$border-light: #eee;
+$day-disabled: #d0d0d0;
+$day-other-month: #c4c4c4;
+
+// Gradientes
+$hero-gradient-start: #ff9a3d;
+$sidebar-gradient-start: #ffe08a;
 
 // Tipografia
 $font-main: "Inter", system-ui, sans-serif;
@@ -22,3 +33,37 @@ $radius-sm: 12px;
 // Breakpoints
 $tablet: 768px;
 $desktop: 960px;
+$agenda-split: 700px;
+$resumen-split: 600px;
+$mobile-actions: 599px;
+
+// Sombras
+$shadow-header: 0 2px 16px rgba(0, 0, 0, 0.06);
+$shadow-nav-mobile: 0 12px 24px rgba(0, 0, 0, 0.08);
+$shadow-card: 0 12px 40px rgba(0, 0, 0, 0.1);
+$shadow-sidebar: 0 10px 30px rgba($secondary-color, 0.18);
+$shadow-avatar: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+@mixin tablet-up {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin min-width($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin max-width($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}

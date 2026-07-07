@@ -1,0 +1,11 @@
+{
+  "name": "amidog-contacto",
+  "private": true,
+  "scripts": {
+    "sass": "sass styles/main.scss styles/main.css",
+    "sass:watch": "sass --watch styles/main.scss:styles/main.css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8"
+  }
+}

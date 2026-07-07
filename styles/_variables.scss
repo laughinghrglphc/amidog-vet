@@ -1,12 +1,17 @@
-/* =======================================================
-   Colores
-   ======================================================= */
-$primary-color: #FFF1C0;      // Crema - fondo
-$secondary-color: #F87823;    // Naranjo - acentos
-$accent-color: #18AA91;       // Turquesa - botones
-$tertiary-color: #E5646D;     // Coral - sin uso por ahora
+$primary: #fff1c0;
+$secondary: #f87823;
+$buttons: #18aa91;
+$additional: #e5646d;
+$decoration: #fad64a;
+$step: #f7f7f7;
+$form: #fcfcfc;
 
-$highlight-color: #FAD64A;    // decoraciones / contrastes
-
-$formbg: #FCFCFC;    // fondo form
-$cardbg: #F7F7F7;    // cards / pasos form
+$text: #262626;
+$text-soft: #6f6f6f;
+$white: #ffffff;
+$border: #bce2df;
+$shadow: 0 18px 48px rgba(91, 61, 35, 0.12);
+$radius-lg: 24px;
+$radius-md: 18px;
+$radius-sm: 10px;
+$container: 1080px;

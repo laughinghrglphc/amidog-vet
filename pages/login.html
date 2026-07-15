@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión – AmiDog Veterinaria</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/img/LogoAmidog.png" alt="logo Amidog Veterinaria" class="logo-amidog">
+      </a>
+    </div>
+    <nav>
+      <ul class="links-nav">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html#servicios">Servicios</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="reservation.html" class="btn-pedir-hora">Pedir hora</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="login-page">
+    <div class="login-page__panel">
+
+
+
+      <!-- ── Col 1: Welcome content ── -->
+      <div class="login-page__content">
+
+        <div class="badge">
+          <!-- heart icon -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          INGRESO
+        </div>
+
+        <h1 class="welcome__heading">
+          <img src="../assets/img/patitas.png" alt="" class="patita-izq" aria-hidden="true">
+          Bienvenido<br />
+          <span class="highlight">a AmiDog<img src="../assets/img/patitas.png" alt="" class="patita-der" aria-hidden="true"></span>
+        </h1>
+
+        <p class="welcome__description">
+          Ingresa para gestionar tus reservas,<br />
+          consultas y datos de tus mascotas.
+        </p>
+
+        <ul class="welcome__features">
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <!-- checkmark -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Reserva tus horas fácilmente
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <!-- plus -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+            Registra a tus mascotas
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">
+              <!-- calendar / clock outline -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+            </span>
+            Revisa tus próximas atenciones
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── Col 2: Login card ── -->
+      <div class="login-page__form-card">
+        <div class="login-card">
+          <h2 class="login-card__title">Iniciar Sesión</h2>
+          <p class="login-card__subtitle">Accede a tu cuenta de AmiDog.</p>
+
+          <form action="#" method="POST" novalidate>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label class="form-group__label" for="email">Correo electrónico</label>
+              <div class="input-wrapper">
+                <!-- circle-check icon -->
+                <svg class="input-wrapper__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="nombre@correo.cl"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label class="form-group__label" for="password">Contraseña</label>
+              <div class="input-wrapper">
+                <!-- lock icon -->
+                <svg class="input-wrapper__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="········"
+                  autocomplete="current-password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="input-wrapper__icon--right"
+                  id="toggle-password"
+                  aria-label="Mostrar contraseña"
+                >
+                  <!-- eye open -->
+                  <svg class="icon-eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <!-- eye closed (hidden by default) -->
+                  <svg class="icon-eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Remember + Forgot -->
+            <div class="form-row">
+              <label class="checkbox-label">
+                <input type="checkbox" name="remember" />
+                Recordarme
+              </label>
+              <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn-primary">Ingresar</button>
+
+          </form>
+
+          <!-- Divider -->
+          <div class="divider" aria-hidden="true">
+            <span class="divider__dot"></span>
+          </div>
+
+          <!-- Register -->
+          <p class="form-footer-text">¿Aún no tienes una cuenta?</p>
+          <a href="#" class="btn-secondary">Crear cuenta</a>
+
+        </div>
+      </div>
+
+      <!-- ── Col 3: Animal visual ── -->
+      <div class="login-page__visual">
+        <div class="animal-visual">
+          <div class="mascota-circular">
+            <div class="mascota-circular__bg"></div>
+            <img src="../assets/img/AnimalesPrincipales.png" alt="Mascotas AmiDog – perro y gatos" class="mascota-circular__img">
+            <img src="../assets/img/estrella.png" alt="" class="mascota-circular__star mascota-circular__star--top" aria-hidden="true">
+            <img src="../assets/img/estrella.png" alt="" class="mascota-circular__star mascota-circular__star--bottom" aria-hidden="true">
+            <img src="../assets/img/patitas.png" alt="" class="mascota-circular__paw" aria-hidden="true">
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.login-page__panel -->
+  </main>
+
+  <footer class="footer" id="contacto">
+    <p class="direccion">Sta Raquel 10815, La Florida, Región Metropolitana</p>
+    <div class="redes-sociales">
+      <img src="../assets/img/LogoInstagram.png" alt="Instagram">
+      <span>@Amidog</span>
+    </div>
+  </footer>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>

@@ -9,18 +9,19 @@
 <body>
 
   <header class="navbar">
-    <a href="../index.html" class="logo">
-      <img src="../assets/img/LogoAmidog.png" alt="Amidog Veterinaria" class="logo-amidog">
-    </a>
-
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/img/LogoAmidog.png" alt="logo Amidog Veterinaria" class="logo-amidog">
+      </a>
+    </div>
     <nav>
-      <div class="links-nav">
-        <a href="../index.html">Inicio</a>
-        <a href="../index.html#servicios">Servicios</a>
-        <a href="nosotros.html" class="active">Nosotros</a>
-        <a href="../index.html#contacto">Contacto</a>
-        <a href="../index.html#contacto" class="btn-pedir-hora">Pedir hora</a>
-      </div>
+      <ul class="links-nav">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html#servicios">Servicios</a></li>
+        <li><a href="nosotros.html" class="active">Nosotros</a></li>
+        <li><a href="../index.html#contacto">Contacto</a></li>
+        <li><a href="reservation.html" class="btn-pedir-hora">Pedir hora</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -29,7 +30,7 @@
 
       <div class="hero-banner">
         <div class="hero-text">
-          <span class="badge">🤍 NUESTRA ESENCIA</span>
+          <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> NUESTRA ESENCIA</span>
           <h2>
             <img src="../assets/img/patitas.png" alt="Patitas" class="patita-izq">
             Más que una veterinaria, <br>
@@ -90,7 +91,9 @@
           </div>
 
           <div class="value-card">
-            <div class="icon-holder">🐾</div>
+            <div class="icon-holder">
+              <img src="../assets/img/patitas.png" alt="" class="value-icon" aria-hidden="true">
+            </div>
             <h4>Bienestar</h4>
             <p>Pensamos en la salud física y emocional.</p>
           </div>
@@ -100,10 +103,8 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <p class="direccion">
-      Sta Raquel 10815, 8310581 La Florida, Región Metropolitana
-    </p>
+  <footer class="footer" id="contacto">
+    <p class="direccion">Sta Raquel 10815, La Florida, Región Metropolitana</p>
 
     <div class="redes-sociales">
       <img src="../assets/img/LogoInstagram.png" alt="Instagram">

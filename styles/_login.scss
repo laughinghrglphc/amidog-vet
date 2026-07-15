@@ -1,0 +1,362 @@
+@use "variables";
+
+// Variables locales
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 24px;
+$radius-pill: 999px;
+$shadow-card: 0 8px 32px rgba(0, 0, 0, 0.12);
+$text-muted: #6c757d;
+$text-placeholder: #adb5bd;
+$border-color: #dee2e6;
+
+
+// Page wrapper
+.login-page {
+  flex: 1;
+  background: variables.$page-bg;
+  padding: 40px 48px 48px;
+
+  @media (max-width: variables.$bp-mobile) {
+    padding: 24px;
+  }
+
+  &__panel {
+    max-width: 1300px;
+    margin-inline: auto;
+    background: variables.$gradient-primary;
+    border-radius: $radius-lg;
+    padding: 52px 56px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 0.85fr;
+    gap: 36px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: variables.$bp-tablet) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "content form"
+        "content visual";
+    }
+
+    @media (max-width: variables.$bp-mobile) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "content"
+        "form"
+        "visual";
+      padding: 36px 28px;
+    }
+  }
+
+  &__content {
+    @media (max-width: variables.$bp-tablet) { grid-area: content; }
+  }
+
+  &__form-card {
+    @media (max-width: variables.$bp-tablet) { grid-area: form; }
+  }
+
+  &__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: variables.$bp-tablet) { grid-area: visual; }
+  }
+}
+
+// Welcome badge
+.login-page .badge {
+  margin-bottom: 20px;
+}
+
+// Welcome heading
+.welcome__heading {
+  font-size: clamp(2rem, 3.5vw, 2.7rem);
+  font-weight: 800;
+  color: variables.$text-dark;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  position: relative;
+
+  span.highlight {
+    display: block;
+    color: variables.$accent-color;
+  }
+
+}
+
+// Welcome description
+.welcome__description {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: variables.$text-dark;
+  line-height: 1.5;
+  margin-block: 20px 28px;
+  max-width: 300px;
+}
+
+// Features list
+.welcome__features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: variables.$text-dark;
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: variables.$accent-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: variables.$white;
+    font-size: 1rem;
+
+    &--outline {
+      background: transparent;
+      border: 2px solid variables.$accent-color;
+      color: variables.$accent-color;
+    }
+  }
+}
+
+// Login card
+.login-card {
+  background: variables.$formbg;
+  border-radius: $radius-md;
+  padding: 36px 32px;
+  box-shadow: $shadow-card;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: variables.$text-dark;
+    margin-bottom: 6px;
+  }
+
+  &__subtitle {
+    font-size: 0.88rem;
+    color: $text-muted;
+    margin-bottom: 28px;
+  }
+}
+
+// Form group
+.form-group {
+  margin-bottom: 20px;
+
+  &__label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: variables.$text-dark;
+    margin-bottom: 8px;
+  }
+}
+
+// Input wrapper
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: variables.$white;
+  border: 1.5px solid $border-color;
+  border-radius: $radius-sm;
+  padding: 0 14px;
+  height: 48px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus-within {
+    border-color: variables.$accent-color;
+    box-shadow: 0 0 0 3px rgba(24, 170, 145, 0.12);
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: variables.$accent-color;
+  }
+
+  &__icon--right {
+    margin-left: auto;
+    cursor: pointer;
+    color: $text-muted;
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: variables.$text-dark;
+    }
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.9rem;
+    color: variables.$text-dark;
+    min-width: 0;
+
+    &::placeholder {
+      color: $text-placeholder;
+    }
+  }
+}
+
+// Form row
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+// Checkbox
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: variables.$text-dark;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid $border-color;
+    border-radius: 3px;
+    accent-color: variables.$accent-color;
+    cursor: pointer;
+  }
+}
+
+// Forgot link
+.forgot-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: variables.$accent-color;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+// Buttons inside login card (override shared .btn-primary/.btn-secondary)
+.login-card .btn-primary {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  background: variables.$accent-color;
+  color: variables.$white;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 13px;
+  border-radius: $radius-pill;
+  border: none;
+
+  &:hover {
+    opacity: 0.88;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.login-card .btn-secondary {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  background: variables.$white;
+  color: variables.$accent-color;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px;
+  border-radius: $radius-pill;
+  border: 2px solid variables.$accent-color;
+
+  &:hover {
+    background: variables.$accent-color;
+    color: variables.$white;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+// Divider
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 20px;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $border-color;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $border-color;
+    margin-inline: 10px;
+  }
+}
+
+// Form footer
+.form-footer-text {
+  text-align: center;
+  font-size: 0.88rem;
+  color: $text-muted;
+  margin-bottom: 14px;
+}
+
+// Animal visual
+.animal-visual {
+  position: relative;
+  width: 260px;
+  height: 260px;
+}
+
+// Override para que mascota-circular se adapte dentro de .animal-visual
+.animal-visual .mascota-circular {
+  width: 100%;
+  height: 100%;
+}
+.animal-visual .mascota-circular__bg {
+  border: 6px solid variables.$white;
+}
+
+// Override para el ring (z-index sobre el bg)
+.animal-visual__ring {
+  z-index: 3;
+}
+
+

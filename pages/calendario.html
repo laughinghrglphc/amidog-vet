@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agenda tu cita en AmiDog Veterinaria">
+    <title>Agenda tu cita — AmiDog Veterinaria</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../assets/img/LogoAmidog.png" alt="logo Amidog Veterinaria" class="logo-amidog">
+            </a>
+        </div>
+        <nav>
+            <ul class="links-nav">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#servicios">Servicios</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="reservation.html" class="btn-pedir-hora">Pedir hora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero__inner">
+            <div>
+                <h1 class="hero__titulo">
+                    <img src="../assets/img/patitas.png" alt="" class="patita-izq" aria-hidden="true">
+                    Agenda tu cita para tu mascota
+                    <img src="../assets/img/patitas.png" alt="" class="patita-der" aria-hidden="true">
+                </h1>
+                <p class="hero__texto">Completa los datos y te contactaremos para confirmar la hora.</p>
+            </div>
+
+            <ol class="pasos" aria-label="Pasos del agendamiento">
+                <li class="paso paso--hecho">
+                    <span class="paso__circulo">✓</span>
+                    <small>Datos</small>
+                </li>
+                <li class="paso paso--activo" aria-current="step">
+                    <span class="paso__circulo">✓</span>
+                    <small>Horario</small>
+                </li>
+                <li class="paso">
+                    <span class="paso__circulo">3</span>
+                    <small>Confirmación</small>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- CONTENIDO -->
+    <main class="main calendario-page">
+        <div class="container">
+            <div class="calendario-contenido">
+
+                <!-- CALENDARIO -->
+                <section class="agenda" id="agenda-calendario">
+                    <h2 class="agenda__titulo">Elige el horario</h2>
+
+                    <div class="resumen" aria-label="Resumen de tu solicitud">
+                        <div class="resumen__item">
+                            <span class="resumen__icono">
+                                <img src="../assets/img/patitas.png" alt="" class="resumen-paw" aria-hidden="true">
+                            </span>
+                            <div>
+                                <span class="resumen__label">Mascota</span>
+                                <span class="resumen__valor">Perro / Gato</span>
+                            </div>
+                        </div>
+                        <div class="resumen__item">
+                            <span class="resumen__icono" aria-hidden="true">🩺</span>
+                            <div>
+                                <span class="resumen__label">Servicio</span>
+                                <span class="resumen__valor">Consulta general</span>
+                            </div>
+                        </div>
+                        <div class="resumen__item">
+                            <span class="resumen__icono">
+                                <img src="../assets/img/LogoUsuarios.png" alt="" class="resumen-icon-img" aria-hidden="true">
+                            </span>
+                            <div>
+                                <span class="resumen__label">Profesional</span>
+                                <span class="resumen__valor">Sin preferencia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="agenda__grid">
+                        <div class="bloque">
+                            <h3 class="bloque__titulo">Fecha disponible</h3>
+                            <div class="calendario">
+                                <div class="calendario__cabecera">
+                                    <p class="calendario__mes" id="mes-texto">Mayo 2026</p>
+                                    <div class="calendario__nav">
+                                        <button type="button" class="btn btn--circulo" id="btn-mes-anterior"
+                                            aria-label="Mes anterior">‹</button>
+                                        <button type="button" class="btn btn--circulo" id="btn-mes-siguiente"
+                                            aria-label="Mes siguiente">›</button>
+                                    </div>
+                                </div>
+                                <div class="calendario__dias-semana" aria-hidden="true">
+                                    <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span>
+                                    <span>Vi</span><span>Sá</span><span>Do</span>
+                                </div>
+                                <div class="calendario__dias" id="dias-calendario"></div>
+                            </div>
+                        </div>
+
+                        <div class="bloque">
+                            <h3 class="bloque__titulo">Horarios disponibles</h3>
+                            <div class="horarios" id="horarios-container"></div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="input-fecha" name="fecha" value="">
+                    <input type="hidden" id="input-hora" name="hora" value="">
+
+                    <div class="agenda__acciones">
+                        <a href="reservation.html" class="btn btn-secundario">← Volver a datos</a>
+                        <button type="button" class="btn btn-primario" id="btn-continuar" disabled>
+                            Continuar con confirmación →
+                        </button>
+                    </div>
+                </section>
+
+                <!-- SIDEBAR -->
+                <aside class="confirmacion-tarjeta" aria-labelledby="tarjeta-titulo">
+                    <h3 class="tarjeta-titulo" id="tarjeta-titulo">Tu cita en AmiDog</h3>
+
+                    <div class="mascota-circular">
+                        <div class="mascota-circular__bg"></div>
+                        <img src="../assets/img/AnimalesPrincipales.png" alt="Gatitos y cachorro de AmiDog" class="mascota-circular__img">
+                        <img src="../assets/img/estrella.png" alt="" class="mascota-circular__star mascota-circular__star--top" aria-hidden="true">
+                        <img src="../assets/img/estrella.png" alt="" class="mascota-circular__star mascota-circular__star--bottom" aria-hidden="true">
+                        <img src="../assets/img/patitas.png" alt="" class="mascota-circular__paw" aria-hidden="true">
+                    </div>
+
+                    <ul class="tarjeta-lista-beneficios">
+                        <li class="beneficio-item">
+                            <span class="beneficio-icono" aria-hidden="true">✓</span>
+                            Confirmación por WhatsApp o correo
+                        </li>
+                        <li class="beneficio-item">
+                            <span class="beneficio-icono" aria-hidden="true">✓</span>
+                            Reagenda fácilmente si lo necesitas
+                        </li>
+                        <li class="beneficio-item">
+                            <span class="beneficio-icono" aria-hidden="true">✓</span>
+                            Atención cercana y sin complicaciones
+                        </li>
+                    </ul>
+
+                    <div class="tarjeta-caja-seguridad">
+                        <h4 class="caja-seguridad-titulo">Reserva rápida y segura</h4>
+                        <p class="caja-seguridad-texto">Tus datos están protegidos y tu mascota recibirá la mejor atención.</p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <p class="direccion">Sta Raquel 10815, La Florida, Región Metropolitana</p>
+        <div class="redes-sociales">
+            <img src="../assets/img/LogoInstagram.png" alt="Instagram">
+            <span>@Amidog</span>
+        </div>
+    </footer>
+
+    <script src="../js/calendario.js"></script>
+</body>
+
+</html>

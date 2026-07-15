@@ -23,6 +23,10 @@ $page-bg: #ffb066;            // Fondo naranja suave general del body
 $text-dark: #252525;          // Texto principal oscuro
 $white: #ffffff;
 $off-white: #fcfcfc;          // Fondo navbar / botón secundario
+$muted-color: #5D6368;        // Texto secundario / gris
+
+/* Gradient principal - mismo en todas las páginas */
+$gradient-primary: linear-gradient(135deg, #ffc85a, #ff8500);
 
 /* =======================================================
    Tipografía

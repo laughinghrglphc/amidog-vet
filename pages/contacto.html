@@ -9,31 +9,31 @@
   <script src="../js/contacto.js" defer></script>
 </head>
 <body>
-  <div class="site-shell">
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a href="../index.html" aria-label="Ir al inicio de AmiDog">
-          <img class="site-header__logo" src="../assets/img/logo-amidog.png" alt="AmiDog Veterinaria">
-        </a>
+  <header class="navbar">
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/img/LogoAmidog.png" alt="logo Amidog Veterinaria" class="logo-amidog">
+      </a>
+    </div>
+    <nav>
+      <ul class="links-nav">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html#servicios">Servicios</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+        <li><a href="reservation.html" class="btn-pedir-hora">Pedir hora</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
-          <span></span>
-        </button>
-
-        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-          <a class="main-nav__link" href="../index.html">Inicio</a>
-          <a class="main-nav__link" href="servicios.html">Servicios</a>
-          <a class="main-nav__link" href="nosotros.html">Nosotros</a>
-          <a class="main-nav__link main-nav__link--active" href="contacto.html" aria-current="page">Contacto</a>
-          <a class="main-nav__link" href="pedir-hora.html">Pedir hora</a> 
-        </nav>
-      </div>
-    </header>
-
-    <main class="contact-page">
+  <main class="contact-page">
       <section class="contact-hero" aria-labelledby="contact-title">
-        <p class="contact-hero__tag">♡ Haz tu consulta</p>
-        <h1 class="contact-hero__title" id="contact-title">Contáctanos <span aria-hidden="true">🐾</span></h1>
+        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> HAZ TU CONSULTA</span>
+        <h1 class="contact-hero__title" id="contact-title">
+          <img src="../assets/img/patitas.png" alt="" class="patita-izq" aria-hidden="true">
+          Contáctanos
+          <img src="../assets/img/patitas.png" alt="" class="patita-der" aria-hidden="true">
+        </h1>
 
         <div class="contact-hero__layout">
           <form class="contact-form" id="contact-form" novalidate>
@@ -89,20 +89,19 @@
           </div>
         </div>
 
-        <span class="decor-star decor-star--top" aria-hidden="true"></span>
-        <span class="decor-star decor-star--bottom" aria-hidden="true"></span>
+        <img src="../assets/img/estrella.png" alt="" class="decor-star--top" aria-hidden="true">
+        <img src="../assets/img/estrella.png" alt="" class="decor-star--bottom" aria-hidden="true">
         <img class="contact-cat" src="../assets/img/GatitoAsomado.png" alt="Gato asomándose desde el costado derecho">
       </section>
     </main>
 
-    <footer class="site-footer">
-      <span>Sta Raquel 10815, 8310581 La Florida, Región Metropolitana</span>
-      <a class="site-footer__social" href="https://www.instagram.com/amidog/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de AmiDog">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+    <footer class="footer" id="contacto">
+      <p class="direccion">Sta Raquel 10815, La Florida, Región Metropolitana</p>
+      <div class="redes-sociales">
+        <img src="../assets/img/LogoInstagram.png" alt="Instagram">
         <span>@Amidog</span>
-      </a>
+      </div>
     </footer>
-  </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>

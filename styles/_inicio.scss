@@ -11,7 +11,7 @@
     overflow: hidden;
 
     .caja-naranja {
-        background: linear-gradient(135deg, #ffc85a 47.11%, #ff8500 95.88%);
+        background: variables.$gradient-primary;
         border-radius: 36px;
         padding: 95px 55px;
         display: flex;
@@ -25,7 +25,7 @@
 
         h1 {
             color: variables.$text-dark;
-            font-size: 58px;
+            font-size: 3.625rem;
             font-weight: 700;
             line-height: 70px;
             position: relative; /* Para posicionar las patitas de fondo */
@@ -35,32 +35,13 @@
                 display: inline-block;
             }
 
-            /* 🐾 Patitas decorativas */
-            .patita-izq {
-                position: absolute;
-                width: 38px;
-                height: auto;
-                top: -15px;
-                left: -25px;
-                transform: rotate(-5deg);
-            }
-
-            .patita-der {
-                display: inline-block;
-                vertical-align: middle;
-                width: 38px;
-                height: auto;
-                margin-left: -20px;
-                margin-bottom: -45px;
-                transform: rotate(160deg);
-            }
         }
 
         p {
             max-width: 480px;
             margin-top: 25px;
             color: #000000;
-            font-size: 21px;
+            font-size: 1.312rem;
             font-weight: 500;
             line-height: 30px;
         }
@@ -165,14 +146,14 @@
 
         h2 {
             color: variables.$text-dark;
-            font-size: 34px;
+            font-size: 2.125rem;
             font-weight: 700;
         }
 
         .subtitulo {
             margin-top: 10px;
             color: variables.$text-dark;
-            font-size: 18px;
+            font-size: 1.125rem;
             font-weight: 500;
         }
     }
@@ -192,7 +173,7 @@
     .seccion-principal {
         width: calc(100% - 50px);
         .caja-naranja { padding: 70px 40px; }
-        .info-banner { max-width: 52%; h1 { font-size: 48px; line-height: 56px; } }
+        .info-banner { max-width: 52%; h1 { font-size: 3rem; line-height: 56px; } }
         .imagen-banner { width: 370px; height: 360px; }
     }
     .seccion-servicios {
@@ -208,8 +189,8 @@
         .caja-naranja { flex-direction: column; padding: 35px 25px; }
         .info-banner {
             max-width: 100%;
-            h1 { font-size: 42px; line-height: 49px; }
-            p { font-size: 18px; }
+            h1 { font-size: 2.625rem; line-height: 49px; }
+            p { font-size: 1.125rem; }
         }
         .botones-banner {
             flex-direction: column;
@@ -220,7 +201,7 @@
     }
     .seccion-servicios {
         width: calc(100% - 30px);
-        .contenedor-titulos h2 { font-size: 29px; }
+        .contenedor-titulos h2 { font-size: 1.812rem; }
         .bloque-tarjetas { grid-template-columns: 1fr; }
     }
 }

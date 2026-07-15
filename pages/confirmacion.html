@@ -25,33 +25,36 @@
     </nav>
   </header>
 
-  <main id="confirmacion-reserva" class="confirmacion-vista">
-      <header class="confirmacion-encabezado">
-        <div>
-          <h1 class="confirmacion-titulo">
-            <img src="../assets/img/patitas.png" alt="" class="title-paw" aria-hidden="true">
-            Agenda tu cita para tu mascota
-            <img src="../assets/img/patitas.png" alt="" class="title-paw title-paw--small" aria-hidden="true">
-          </h1>
-          <p class="confirmacion-intro">Completa los datos y te contactaremos para confirmar la hora.</p>
-        </div>
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <h1 class="hero__titulo">
+          <img src="../assets/img/patitas.png" alt="" class="patita-izq" aria-hidden="true">
+          Agenda tu cita para tu mascota
+          <img src="../assets/img/patitas.png" alt="" class="patita-der" aria-hidden="true">
+        </h1>
+        <p class="hero__texto">Completa los datos y te contactaremos para confirmar la hora.</p>
+      </div>
 
-        <ol class="confirmacion-pasos" aria-label="Progreso de reserva">
-          <li class="paso paso--completo">
-            <span class="paso__circulo" aria-hidden="true">✓</span>
-            <span>Datos</span>
-          </li>
-          <li class="paso paso--completo">
-            <span class="paso__circulo" aria-hidden="true">✓</span>
-            <span>Horario</span>
-          </li>
-          <li class="paso paso--activo">
-            <span class="paso__circulo" aria-hidden="true">✓</span>
-            <span>Confirmación</span>
-          </li>
-        </ol>
-      </header>
+      <ol class="pasos" aria-label="Pasos del agendamiento">
+        <li class="paso paso--hecho">
+          <span class="paso__circulo">✓</span>
+          <small>Datos</small>
+        </li>
+        <li class="paso paso--hecho">
+          <span class="paso__circulo">✓</span>
+          <small>Horario</small>
+        </li>
+        <li class="paso paso--activo" aria-current="step">
+          <span class="paso__circulo">✓</span>
+          <small>Confirmación</small>
+        </li>
+      </ol>
+    </div>
+  </section>
 
+  <main class="main confirmacion-page">
+    <div class="container">
       <div class="confirmacion-contenido">
         <section class="confirmacion-detalles" aria-labelledby="confirmacion-titulo">
           <h2 class="confirmacion-subtitulo" id="confirmacion-titulo">Confirma tu cita</h2>
@@ -62,7 +65,9 @@
 
             <div class="confirmacion-grid-datos confirmacion-grid-datos--tres">
               <div class="dato-item">
-                <span class="dato-icono dato-icono--paw" aria-hidden="true"></span>
+                <span class="dato-icono" aria-hidden="true">
+                  <img src="../assets/img/patitas.png" alt="" class="dato-icono-img">
+                </span>
                 <span class="dato-texto">
                   <span class="dato-etiqueta">Mascota:</span>
                   <span class="dato-valor" id="resumen-mascota">Perro / Gato</span>
@@ -70,7 +75,7 @@
               </div>
 
               <div class="dato-item">
-                <span class="dato-icono dato-icono--salud" aria-hidden="true"></span>
+                <span class="dato-icono" aria-hidden="true">🩺</span>
                 <span class="dato-texto">
                   <span class="dato-etiqueta">Servicio:</span>
                   <span class="dato-valor" id="resumen-servicio">Consulta general</span>
@@ -78,7 +83,9 @@
               </div>
 
               <div class="dato-item">
-                <span class="dato-icono" aria-hidden="true"></span>
+                <span class="dato-icono" aria-hidden="true">
+                  <img src="../assets/img/LogoUsuarios.png" alt="" class="dato-icono-img">
+                </span>
                 <span class="dato-texto">
                   <span class="dato-etiqueta">Profesional:</span>
                   <span class="dato-valor" id="resumen-profesional">Sin preferencia</span>
@@ -154,10 +161,12 @@
         <aside class="confirmacion-tarjeta" aria-labelledby="tarjeta-titulo">
           <h3 class="tarjeta-titulo" id="tarjeta-titulo">Tu cita en AmiDog</h3>
 
-          <div class="tarjeta-imagen-contenedor">
-            <img src="../assets/img/estrella.png" alt="" class="estrella estrella--uno" aria-hidden="true">
-            <img src="../assets/img/AnimalesPrincipales.png" alt="Gatitos y cachorro de AmiDog" class="tarjeta-imagen">
-            <img src="../assets/img/estrella.png" alt="" class="estrella estrella--dos" aria-hidden="true">
+          <div class="mascota-circular">
+            <div class="mascota-circular__bg"></div>
+            <img src="../assets/img/AnimalesPrincipales.png" alt="Gatitos y cachorro de AmiDog" class="mascota-circular__img">
+            <img src="../assets/img/estrella.png" alt="" class="mascota-circular__star mascota-circular__star--top" aria-hidden="true">
+            <img src="../assets/img/estrella.png" alt="" class="mascota-circular__star mascota-circular__star--bottom" aria-hidden="true">
+            <img src="../assets/img/patitas.png" alt="" class="mascota-circular__paw" aria-hidden="true">
           </div>
 
           <ul class="tarjeta-lista-beneficios">
@@ -181,14 +190,15 @@
           </div>
         </aside>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <footer class="footer" id="contacto">
-      <p class="direccion">Sta Raquel 10815, La Florida, Región Metropolitana</p>
-      <div class="redes-sociales">
-        <img src="../assets/img/LogoInstagram.png" alt="Instagram">
-        <span>@Amidog</span>
-      </div>
-    </footer>
+  <footer class="footer" id="contacto">
+    <p class="direccion">Sta Raquel 10815, La Florida, Región Metropolitana</p>
+    <div class="redes-sociales">
+      <img src="../assets/img/LogoInstagram.png" alt="Instagram">
+      <span>@Amidog</span>
+    </div>
+  </footer>
 </body>
 </html>

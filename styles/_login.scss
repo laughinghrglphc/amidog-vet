@@ -9,23 +9,22 @@ $shadow-card: 0 8px 32px rgba(0, 0, 0, 0.12);
 $text-muted: #6c757d;
 $text-placeholder: #adb5bd;
 $border-color: #dee2e6;
-$bp-lg: 1100px;
-$bp-md: 768px;
+
 
 // Page wrapper
 .login-page {
   flex: 1;
-  background: linear-gradient(135deg, #fff3c5 0%, #fde89a 30%, #f9a84a 65%, #f87823 100%);
+  background: variables.$page-bg;
   padding: 40px 48px 48px;
 
-  @media (max-width: $bp-md) {
+  @media (max-width: variables.$bp-mobile) {
     padding: 24px;
   }
 
   &__panel {
     max-width: 1300px;
     margin-inline: auto;
-    background: linear-gradient(130deg, #fde27a 0%, #fdb660 40%, #f87823 100%);
+    background: variables.$gradient-primary;
     border-radius: $radius-lg;
     padding: 52px 56px;
     display: grid;
@@ -35,14 +34,14 @@ $bp-md: 768px;
     position: relative;
     overflow: hidden;
 
-    @media (max-width: $bp-lg) {
+    @media (max-width: variables.$bp-tablet) {
       grid-template-columns: 1fr 1fr;
       grid-template-areas:
         "content form"
         "content visual";
     }
 
-    @media (max-width: $bp-md) {
+    @media (max-width: variables.$bp-mobile) {
       grid-template-columns: 1fr;
       grid-template-areas:
         "content"
@@ -53,34 +52,23 @@ $bp-md: 768px;
   }
 
   &__content {
-    @media (max-width: $bp-lg) { grid-area: content; }
+    @media (max-width: variables.$bp-tablet) { grid-area: content; }
   }
 
   &__form-card {
-    @media (max-width: $bp-lg) { grid-area: form; }
+    @media (max-width: variables.$bp-tablet) { grid-area: form; }
   }
 
   &__visual {
     display: flex;
     justify-content: center;
     align-items: center;
-    @media (max-width: $bp-lg) { grid-area: visual; }
+    @media (max-width: variables.$bp-tablet) { grid-area: visual; }
   }
 }
 
 // Welcome badge
-.welcome__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: variables.$white;
-  color: variables.$text-dark;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 8px 18px;
-  border-radius: $radius-pill;
+.login-page .badge {
   margin-bottom: 20px;
 }
 
@@ -98,24 +86,6 @@ $bp-md: 768px;
     color: variables.$accent-color;
   }
 
-  .patita-izq {
-    position: absolute;
-    width: 32px;
-    height: auto;
-    top: -12px;
-    left: -20px;
-    transform: rotate(-5deg);
-  }
-
-  .patita-der {
-    display: inline-block;
-    vertical-align: middle;
-    width: 32px;
-    height: auto;
-    margin-left: -6px;
-    margin-bottom: -6px;
-    transform: rotate(160deg);
-  }
 }
 
 // Welcome description
@@ -373,53 +343,20 @@ $bp-md: 768px;
   position: relative;
   width: 260px;
   height: 260px;
+}
 
-  &__ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 4px solid variables.$secondary-color;
-    z-index: 1;
-    pointer-events: none;
-  }
+// Override para que mascota-circular se adapte dentro de .animal-visual
+.animal-visual .mascota-circular {
+  width: 100%;
+  height: 100%;
+}
+.animal-visual .mascota-circular__bg {
+  border: 6px solid variables.$white;
+}
 
-  &__circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 6px solid variables.$white;
-    overflow: hidden;
-    position: relative;
-    z-index: 2;
-    background: variables.$white;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-  }
-
-  &__star {
-    position: absolute;
-    width: 28px;
-    height: auto;
-    z-index: 3;
-
-    &--top-left {
-      top: 6px;
-      left: -14px;
-      transform: rotate(-15deg);
-    }
-
-    &--bottom-right {
-      bottom: 12px;
-      right: -14px;
-      width: 32px;
-      transform: rotate(20deg);
-    }
-  }
+// Override para el ring (z-index sobre el bg)
+.animal-visual__ring {
+  z-index: 3;
 }
 
 

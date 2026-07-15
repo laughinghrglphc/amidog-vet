@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iniciar Sesión – AmiDog Veterinaria</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/main.css" />
 </head>
 <body>
@@ -23,7 +20,7 @@
         <li><a href="../index.html#servicios">Servicios</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="../index.html#contacto" class="btn-pedir-hora">Pedir hora</a></li>
+        <li><a href="reservation.html" class="btn-pedir-hora">Pedir hora</a></li>
       </ul>
     </nav>
   </header>
@@ -36,7 +33,7 @@
       <!-- ── Col 1: Welcome content ── -->
       <div class="login-page__content">
 
-        <div class="welcome__badge">
+        <div class="badge">
           <!-- heart icon -->
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           INGRESO
@@ -160,12 +157,13 @@
       <!-- ── Col 3: Animal visual ── -->
       <div class="login-page__visual">
         <div class="animal-visual">
-          <div class="animal-visual__circle">
-            <img src="../assets/img/AnimalesPrincipales.png" alt="Mascotas AmiDog – perro y gatos" />
+          <div class="mascota-circular">
+            <div class="mascota-circular__bg"></div>
+            <img src="../assets/img/AnimalesPrincipales.png" alt="Mascotas AmiDog – perro y gatos" class="mascota-circular__img">
+            <img src="../assets/img/estrella.png" alt="" class="mascota-circular__star mascota-circular__star--top" aria-hidden="true">
+            <img src="../assets/img/estrella.png" alt="" class="mascota-circular__star mascota-circular__star--bottom" aria-hidden="true">
+            <img src="../assets/img/patitas.png" alt="" class="mascota-circular__paw" aria-hidden="true">
           </div>
-          <div class="animal-visual__ring"></div>
-          <img src="../assets/img/estrella.png" alt="" class="animal-visual__star animal-visual__star--top-left" aria-hidden="true">
-          <img src="../assets/img/estrella.png" alt="" class="animal-visual__star animal-visual__star--bottom-right" aria-hidden="true">
         </div>
       </div>
 

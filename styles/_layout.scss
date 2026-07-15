@@ -44,7 +44,7 @@ body {
         a {
             text-decoration: none;
             color: variables.$text-dark;
-            font-size: 18px;
+            font-size: 1.125rem;
             font-weight: 600;
             padding: 10px 17px;
             border-radius: 10px;
@@ -82,7 +82,7 @@ body {
 
     .direccion {
         color: variables.$text-dark;
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: 500;
     }
 
@@ -91,7 +91,7 @@ body {
         align-items: center;
         gap: 12px;
         color: variables.$white;
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: 500;
 
         img {

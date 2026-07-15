@@ -30,7 +30,6 @@ $border: #bce2df;
   align-items: center;
   justify-content: center;
   padding: clamp(24px, 4vw, 50px);
-  background: linear-gradient(135deg, rgba(variables.$primary-color, 0.9), rgba(variables.$secondary-color, 0.45));
 }
 
 .contact-hero {
@@ -40,23 +39,11 @@ $border: #bce2df;
   padding: 22px 68px 20px;
   overflow: hidden;
   border-radius: $radius-lg;
-  background: linear-gradient(105deg, variables.$primary-color 0%, variables.$highlight-color 47%, variables.$secondary-color 100%);
+  background: variables.$gradient-primary;
   box-shadow: $shadow;
 
-  &__tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    min-width: 180px;
-    padding: 5px 20px;
+  .badge {
     margin-bottom: 8px;
-    border-radius: 999px;
-    color: variables.$accent-color;
-    background: rgba(variables.$white, 0.95);
-    font-size: 0.72rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
   }
 
   &__title {
@@ -67,14 +54,7 @@ $border: #bce2df;
     font-size: clamp(2.35rem, 5vw, 3.2rem);
     line-height: 1;
     letter-spacing: -0.04em;
-
-    .patita-contacto-title {
-      width: 34px;
-      height: auto;
-      transform: rotate(160deg);
-      margin-bottom: -4px;
-      filter: brightness(0.45);
-    }
+    position: relative;
   }
 
   &__layout {
@@ -329,11 +309,6 @@ $border: #bce2df;
       font-size: 1.7rem;
     }
 
-    &__tag {
-      margin-left: 36px;
-      min-width: 0;
-    }
-
     &__title {
       margin-top: 8px;
     }
@@ -388,10 +363,6 @@ $border: #bce2df;
   .contact-hero {
     padding-inline: 12px;
 
-    &__tag {
-      margin-left: 42px;
-      padding-inline: 12px;
-    }
   }
 
   .contact-form {

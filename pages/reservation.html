@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agenda tu hora — AmiDog Veterinaria</title>
   <link rel="stylesheet" href="../styles/main.css">
 </head>
@@ -19,109 +19,136 @@
         <li><a href="../index.html#servicios">Servicios</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="../index.html#contacto" class="btn-pedir-hora">Pedir hora</a></li>
+        <li><a href="reservation.html" class="btn-pedir-hora">Pedir hora</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="main-content">
-    <div class="page-information">
-      <div class="title-and-summary">
-        <h2>Agenda tu cita para tu mascota</h2>
-        <strong>Completa los datos y te contactaremos para confirmar la hora</strong>
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <h1 class="hero__titulo">
+          <img src="../assets/img/patitas.png" alt="" class="patita-izq" aria-hidden="true">
+          Agenda tu cita para tu mascota
+          <img src="../assets/img/patitas.png" alt="" class="patita-der" aria-hidden="true">
+        </h1>
+        <p class="hero__texto">Completa los datos y te contactaremos para confirmar la hora.</p>
       </div>
-      <div class="steps">
-        <div class="step completed">
-          <div class="circle">✓</div>
-          <span>Datos</span>
-        </div>
-        <div class="step active">
-          <div class="circle">2</div>
-          <span>Horario</span>
-        </div>
-        <div class="step">
-          <div class="circle">3</div>
-          <span>Confirmación</span>
-        </div>
-      </div>
+
+      <ol class="pasos" aria-label="Pasos del agendamiento">
+        <li class="paso paso--activo" aria-current="step">
+          <span class="paso__circulo">✓</span>
+          <small>Datos</small>
+        </li>
+        <li class="paso">
+          <span class="paso__circulo">2</span>
+          <small>Horario</small>
+        </li>
+        <li class="paso">
+          <span class="paso__circulo">3</span>
+          <small>Confirmación</small>
+        </li>
+      </ol>
     </div>
+  </section>
 
-    <div class="appointment">
-      <form class="appointment-form">
-        <section>
-          <h2>Datos de la atención</h2>
-          <p class="subtitle">Cuéntanos qué necesita tu mascota.</p>
+  <main class="main reserva-page">
+    <div class="container">
+      <div class="appointment">
+        <form class="appointment-form">
+          <section>
+            <h2>Datos de la atención</h2>
+            <p class="subtitle">Cuéntanos qué necesita tu mascota.</p>
 
-          <div class="form-grid">
-            <div class="form-field">
-              <label>Nombre de la mascota</label>
-              <input type="text" placeholder="Firulais">
+            <div class="form-grid">
+              <div class="form-field">
+                <label>Nombre de la mascota</label>
+                <input type="text" placeholder="Firulais">
+              </div>
+              <div class="form-field">
+                <label>Tipo de mascota</label>
+                <select>
+                  <option>Perro / Gato</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Servicio</label>
+                <select>
+                  <option>Selecciona un servicio</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Profesional</label>
+                <select>
+                  <option>Sin preferencia</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Fecha preferida</label>
+                <input type="text" placeholder="dd / mm / aaaa">
+              </div>
+              <div class="form-field">
+                <label>Horario</label>
+                <select>
+                  <option>Mañana / Tarde</option>
+                </select>
+              </div>
             </div>
-            <div class="form-field">
-              <label>Tipo de mascota</label>
-              <select>
-                <option>Perro / Gato</option>
-              </select>
+          </section>
+
+          <section>
+            <h2 id="datos-contacto-title">Tus datos de contacto</h2>
+            <div class="form-grid">
+              <div class="form-field">
+                <label>Nombre completo</label>
+                <input type="text" placeholder="Nombre y apellido">
+              </div>
+              <div class="form-field">
+                <label>Teléfono</label>
+                <input type="tel" placeholder="+56 9 1234 5678">
+              </div>
+              <div class="form-field full-width">
+                <label>Correo electrónico</label>
+                <input type="email" placeholder="nombre@correo.cl">
+              </div>
             </div>
-            <div class="form-field">
-              <label>Servicio</label>
-              <select>
-                <option>Selecciona un servicio</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label>Profesional</label>
-              <select>
-                <option>Sin preferencia</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label>Fecha preferida</label>
-              <input type="text" placeholder="dd / mm / aaaa">
-            </div>
-            <div class="form-field">
-              <label>Horario</label>
-              <select>
-                <option>Mañana / Tarde</option>
-              </select>
-            </div>
+          </section>
+
+          <button class="btn btn-primario" type="submit">Continuar con el horario →</button>
+        </form>
+
+        <aside class="confirmacion-tarjeta" aria-labelledby="tarjeta-titulo">
+          <h3 class="tarjeta-titulo" id="tarjeta-titulo">Tu cita en AmiDog</h3>
+
+          <div class="mascota-circular">
+            <div class="mascota-circular__bg"></div>
+            <img src="../assets/img/AnimalesPrincipales.png" alt="Gatitos y cachorro de AmiDog" class="mascota-circular__img">
+            <img src="../assets/img/estrella.png" alt="" class="mascota-circular__star mascota-circular__star--top" aria-hidden="true">
+            <img src="../assets/img/estrella.png" alt="" class="mascota-circular__star mascota-circular__star--bottom" aria-hidden="true">
+            <img src="../assets/img/patitas.png" alt="" class="mascota-circular__paw" aria-hidden="true">
           </div>
-        </section>
 
-        <section>
-          <h2 id="datos-contacto-title">Tus datos de contacto</h2>
-          <div class="form-grid">
-            <div class="form-field">
-              <label>Nombre completo</label>
-              <input type="text" placeholder="Nombre y apellido">
-            </div>
-            <div class="form-field">
-              <label>Teléfono</label>
-              <input type="tel" placeholder="+56 9 1234 5678">
-            </div>
-            <div class="form-field full-width">
-              <label>Correo electrónico</label>
-              <input type="email" placeholder="nombre@correo.cl">
-            </div>
+          <ul class="tarjeta-lista-beneficios">
+            <li class="beneficio-item">
+              <span class="beneficio-icono" aria-hidden="true">✓</span>
+              Confirmación por WhatsApp o correo
+            </li>
+            <li class="beneficio-item">
+              <span class="beneficio-icono" aria-hidden="true">✓</span>
+              Reagenda fácilmente si lo necesitas
+            </li>
+            <li class="beneficio-item">
+              <span class="beneficio-icono" aria-hidden="true">✓</span>
+              Atención cercana y sin complicaciones
+            </li>
+          </ul>
+
+          <div class="tarjeta-caja-seguridad">
+            <h4 class="caja-seguridad-titulo">Reserva rápida y segura</h4>
+            <p class="caja-seguridad-texto">Tus datos están protegidos y tu mascota recibirá la mejor atención.</p>
           </div>
-        </section>
-
-        <button class="btn-submit" type="submit">Continuar con el horario →</button>
-      </form>
-
-      <aside class="summary-card">
-        <h3>Tu cita en AmiDog</h3>
-        <img src="../assets/img/AnimalesPrincipales.png" alt="Mascotas" class="pet-image">
-        <ul>
-          <li>Confirmación por WhatsApp o correo</li>
-          <li>Reagenda fácilmente si lo necesitas</li>
-          <li>Atención cercana y sin complicaciones</li>
-        </ul>
-        <div class="schedule">
-          <small>Horario de atención</small>
-          <strong>Mar–Sáb · 09:00 a 19:00</strong>
-        </div>
-      </aside>
+        </aside>
+      </div>
     </div>
   </main>
 

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda tu hora — AmiDog Veterinaria</title>
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/img/LogoAmidog.png" alt="logo Amidog Veterinaria" class="logo-amidog">
+      </a>
+    </div>
+    <nav>
+      <ul class="links-nav">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html#servicios">Servicios</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="../index.html#contacto" class="btn-pedir-hora">Pedir hora</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="page-information">
+      <div class="title-and-summary">
+        <h2>Agenda tu cita para tu mascota</h2>
+        <strong>Completa los datos y te contactaremos para confirmar la hora</strong>
+      </div>
+      <div class="steps">
+        <div class="step completed">
+          <div class="circle">✓</div>
+          <span>Datos</span>
+        </div>
+        <div class="step active">
+          <div class="circle">2</div>
+          <span>Horario</span>
+        </div>
+        <div class="step">
+          <div class="circle">3</div>
+          <span>Confirmación</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="appointment">
+      <form class="appointment-form">
+        <section>
+          <h2>Datos de la atención</h2>
+          <p class="subtitle">Cuéntanos qué necesita tu mascota.</p>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label>Nombre de la mascota</label>
+              <input type="text" placeholder="Firulais">
+            </div>
+            <div class="form-field">
+              <label>Tipo de mascota</label>
+              <select>
+                <option>Perro / Gato</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Servicio</label>
+              <select>
+                <option>Selecciona un servicio</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Profesional</label>
+              <select>
+                <option>Sin preferencia</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Fecha preferida</label>
+              <input type="text" placeholder="dd / mm / aaaa">
+            </div>
+            <div class="form-field">
+              <label>Horario</label>
+              <select>
+                <option>Mañana / Tarde</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="datos-contacto-title">Tus datos de contacto</h2>
+          <div class="form-grid">
+            <div class="form-field">
+              <label>Nombre completo</label>
+              <input type="text" placeholder="Nombre y apellido">
+            </div>
+            <div class="form-field">
+              <label>Teléfono</label>
+              <input type="tel" placeholder="+56 9 1234 5678">
+            </div>
+            <div class="form-field full-width">
+              <label>Correo electrónico</label>
+              <input type="email" placeholder="nombre@correo.cl">
+            </div>
+          </div>
+        </section>
+
+        <button class="btn-submit" type="submit">Continuar con el horario →</button>
+      </form>
+
+      <aside class="summary-card">
+        <h3>Tu cita en AmiDog</h3>
+        <img src="../assets/img/AnimalesPrincipales.png" alt="Mascotas" class="pet-image">
+        <ul>
+          <li>Confirmación por WhatsApp o correo</li>
+          <li>Reagenda fácilmente si lo necesitas</li>
+          <li>Atención cercana y sin complicaciones</li>
+        </ul>
+        <div class="schedule">
+          <small>Horario de atención</small>
+          <strong>Mar–Sáb · 09:00 a 19:00</strong>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <p class="direccion">Sta Raquel 10815, La Florida, Región Metropolitana</p>
+    <div class="redes-sociales">
+      <img src="../assets/img/LogoInstagram.png" alt="Instagram">
+      <span>@Amidog</span>
+    </div>
+  </footer>
+</body>
+</html>

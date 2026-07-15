@@ -228,38 +228,24 @@ $border: #bce2df;
   }
 }
 
-.decor-star {
+[class*="decor-star--"] {
   position: absolute;
   z-index: 2;
-  width: 26px;
-  height: 26px;
-  color: variables.$highlight-color;
+  width: 32px;
+  height: auto;
+}
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 7px;
-    height: 26px;
-    border-radius: 50%;
-    background: currentColor;
-  }
+.decor-star--top {
+  right: 18px;
+  top: 278px;
+  transform: rotate(-15deg);
+}
 
-  &::after {
-    transform: rotate(90deg);
-  }
-
-  &--top {
-    right: 18px;
-    top: 278px;
-  }
-
-  &--bottom {
-    right: 78px;
-    bottom: 50px;
-  }
+.decor-star--bottom {
+  right: 78px;
+  bottom: 50px;
+  width: 36px;
+  transform: rotate(20deg);
 }
 
 .contact-cat {
@@ -382,13 +368,13 @@ $border: #bce2df;
     transform: scaleX(-1);
   }
 
-  .decor-star--top {
+  img.decor-star--top {
     top: auto;
     right: 12px;
     bottom: 205px;
   }
 
-  .decor-star--bottom {
+  img.decor-star--bottom {
     right: 76px;
     bottom: 45px;
   }

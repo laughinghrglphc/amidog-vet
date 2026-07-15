@@ -1096,33 +1096,24 @@ body {
   max-width: 350px;
 }
 
-.decor-star {
+[class*=decor-star--] {
   position: absolute;
   z-index: 2;
-  width: 26px;
-  height: 26px;
-  color: #FAD64A;
+  width: 32px;
+  height: auto;
 }
-.decor-star::before, .decor-star::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 7px;
-  height: 26px;
-  border-radius: 50%;
-  background: currentColor;
-}
-.decor-star::after {
-  transform: rotate(90deg);
-}
+
 .decor-star--top {
   right: 18px;
   top: 278px;
+  transform: rotate(-15deg);
 }
+
 .decor-star--bottom {
   right: 78px;
   bottom: 50px;
+  width: 36px;
+  transform: rotate(20deg);
 }
 
 .contact-cat {
@@ -1233,12 +1224,12 @@ body {
     width: 118px;
     transform: scaleX(-1);
   }
-  .decor-star--top {
+  img.decor-star--top {
     top: auto;
     right: 12px;
     bottom: 205px;
   }
-  .decor-star--bottom {
+  img.decor-star--bottom {
     right: 76px;
     bottom: 45px;
   }

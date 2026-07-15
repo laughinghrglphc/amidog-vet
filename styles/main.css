@@ -1352,10 +1352,28 @@ body {
   color: #252525;
   line-height: 1.15;
   margin-bottom: 16px;
+  position: relative;
 }
 .welcome__heading span.highlight {
   display: block;
   color: #18AA91;
+}
+.welcome__heading .patita-izq {
+  position: absolute;
+  width: 32px;
+  height: auto;
+  top: -12px;
+  left: -20px;
+  transform: rotate(-5deg);
+}
+.welcome__heading .patita-der {
+  display: inline-block;
+  vertical-align: middle;
+  width: 32px;
+  height: auto;
+  margin-left: -6px;
+  margin-bottom: -6px;
+  transform: rotate(160deg);
 }
 
 .welcome__description {
@@ -1622,40 +1640,6 @@ body {
 .animal-visual__star--bottom-right {
   bottom: 12px;
   right: -14px;
-}
-
-.paw-cluster {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #1a1a1a;
-  opacity: 0.5;
-}
-.paw-cluster--above {
-  margin-bottom: 6px;
-}
-.paw-cluster--below {
-  margin-top: 6px;
-}
-
-.paw {
-  display: block;
-  flex-shrink: 0;
-}
-.paw--lg {
-  width: 24px;
-  height: 24px;
-  transform: rotate(-15deg);
-}
-.paw--sm {
-  width: 17px;
-  height: 17px;
-  transform: rotate(10deg);
-}
-.paw--xs {
-  width: 13px;
-  height: 13px;
-  transform: rotate(25deg);
 }
 
 /*# sourceMappingURL=main.css.map */

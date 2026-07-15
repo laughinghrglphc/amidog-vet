@@ -91,10 +91,30 @@ $bp-md: 768px;
   color: variables.$text-dark;
   line-height: 1.15;
   margin-bottom: 16px;
+  position: relative;
 
   span.highlight {
     display: block;
     color: variables.$accent-color;
+  }
+
+  .patita-izq {
+    position: absolute;
+    width: 32px;
+    height: auto;
+    top: -12px;
+    left: -20px;
+    transform: rotate(-5deg);
+  }
+
+  .patita-der {
+    display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+    height: auto;
+    margin-left: -6px;
+    margin-bottom: -6px;
+    transform: rotate(160deg);
   }
 }
 
@@ -400,28 +420,4 @@ $bp-md: 768px;
   }
 }
 
-// Paw clusters
-.paw-cluster {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #1a1a1a;
-  opacity: 0.5;
 
-  &--above {
-    margin-bottom: 6px;
-  }
-
-  &--below {
-    margin-top: 6px;
-  }
-}
-
-.paw {
-  display: block;
-  flex-shrink: 0;
-
-  &--lg  { width: 24px; height: 24px; transform: rotate(-15deg); }
-  &--sm  { width: 17px; height: 17px; transform: rotate(10deg); }
-  &--xs  { width: 13px; height: 13px; transform: rotate(25deg); }
-}

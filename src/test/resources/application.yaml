@@ -1,0 +1,59 @@
+server:
+  servlet:
+    session:
+      timeout: 8h
+      cookie:
+        http-only: true
+        secure: ${SESSION_COOKIE_SECURE:false}
+        same-site: lax
+spring:
+  jackson:
+    datatype:
+      datetime:
+        adjust-dates-to-context-time-zone: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  session:
+    jdbc:
+      initialize-schema: never
+  mail:
+    host: ${SMTP_HOST:localhost}
+    port: ${SMTP_PORT:1025}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
+
+amidog:
+  clinic-zone: ${CLINIC_TIMEZONE:America/Santiago}
+  frontend-base-url: ${FRONTEND_BASE_URL:http://localhost:5173}
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}
+  booking:
+    auto-confirm: ${BOOKING_AUTO_CONFIRM:false}
+    duration-minutes: ${BOOKING_DURATION_MINUTES:30}
+    minimum-notice-hours: ${BOOKING_MIN_NOTICE_HOURS:2}
+    horizon-days: ${BOOKING_HORIZON_DAYS:90}
+  notifications:
+    reminder:
+      enabled: ${NOTIFICATION_REMINDERS_ENABLED:false}
+      window-start-hours: ${NOTIFICATION_REMINDER_WINDOW_START_HOURS:23}
+      window-end-hours: ${NOTIFICATION_REMINDER_WINDOW_END_HOURS:25}
+      batch-size: ${NOTIFICATION_REMINDER_BATCH_SIZE:100}
+      cron: ${NOTIFICATION_REMINDER_CRON:0 5 * * * *}
+  tokens:
+    cleanup-cron: ${TOKEN_CLEANUP_CRON:0 30 3 * * *}
+  admin:
+    email: ${ADMIN_EMAIL:}
+    password: ${ADMIN_PASSWORD:}
+    name: ${ADMIN_NAME:Administradora AmiDog}
+    phone: ${ADMIN_PHONE:}
+  contact:
+    clinic-email: ${CLINIC_EMAIL:}
+    whatsapp-number: ${WHATSAPP_NUMBER:}
+  email:
+    delivery: ${EMAIL_DELIVERY:log}
+    reconciliation-delay-ms: ${EMAIL_RECONCILIATION_DELAY_MS:30000}

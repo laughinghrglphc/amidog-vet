@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: app
+  config:
+    import: optional:file:.env[.properties]
+
+  # JPA / Hibernate
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Security
+  security:
+    user:
+      name: admin
+      password: admin
+
+  # MVC
+  mvc:
+    servlet:
+      path: /
+    static-path-pattern: /**
+  web:
+    resources:
+      static-locations: classpath:/static/

@@ -1,96 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Veterinaria AmiDog" />
     <title>Veterinaria AmiDog</title>
-    <link rel="stylesheet" href="styles/main.css">
-</head>
-<body>
-
-    <header class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="assets/img/LogoAmidog.png" alt="logo Amidog Veterinaria" class="logo-amidog">
-            </a>
-        </div>
-        <nav>
-            <ul class="links-nav">
-                <li><a href="#inicio" class="active">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="pages/nosotros.html">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#contacto" class="btn-pedir-hora">Pedir hora</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="seccion-principal" id="inicio">
-            <div class="caja-naranja">
-
-                <div class="info-banner">
-                    <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> VETERINARIA DE CONFIANZA</span>
-                    <h1>
-                        <img src="assets/img/patitas.png" alt="Patitas" class="patita-izq">
-                        Cuidamos a tu <br>
-                        <span class="highlight">AmiDog</span>
-                        <img src="assets/img/patitas.png" alt="Patitas" class="patita-der">
-                    </h1>
-                    <p>Atención simple, cercana y con mucho cariño para perros, gatos y otras mascotas.</p>
-
-                    <div class="botones-banner">
-                        <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
-                        <a href="#contacto" class="btn btn-secondary">Contactar</a>
-                    </div>
-                </div>
-
-                <div class="contenedor-mascotas-circulo">
-                    <div class="circulo-blanco-fondo"></div>
-                    <img src="assets/img/estrella.png" alt="Estrella" class="deco-img-estrella deco-img-estrella--arriba">
-                    <img src="assets/img/estrella.png" alt="Estrella" class="deco-img-estrella deco-img-estrella--abajo">
-                    <img src="assets/img/patitas.png" alt="Patitas Decorativas" class="deco-img-patitas">
-                    <img src="assets/img/AnimalesPrincipales.png" alt="Mascotas Amidog" class="img-perro-gato">
-                </div>
-
-            </div>
-        </section>
-
-        <section class="seccion-servicios" id="servicios">
-            <div class="contenedor-titulos">
-                <h2>Nuestros servicios</h2>
-                <p class="subtitulo">Lo básico para cuidar a tu mascota</p>
-            </div>
-
-            <div class="bloque-tarjetas">
-                <article class="tarjeta-servicio">
-                    <div class="icono-servicio">🩺</div>
-                    <h3>Consulta general</h3>
-                    <p>Revisión y orientación para tu mascota</p>
-                </article>
-
-                <article class="tarjeta-servicio">
-                    <div class="icono-servicio">💉</div>
-                    <h3>Vacunas</h3>
-                    <p>Protección y control de vacunas al día</p>
-                </article>
-
-                <article class="tarjeta-servicio">
-                    <div class="icono-servicio">✂️</div>
-                    <h3>Peluquería</h3>
-                    <p>Baño, corte y limpieza básica</p>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer" id="contacto">
-        <p class="direccion">Sta Raquel 10815, La Florida, Región Metropolitana</p>
-        <div class="redes-sociales">
-            <img src="assets/img/LogoInstagram.png" alt="Instagram">
-            <span>@Amidog</span>
-        </div>
-    </footer>
-
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

@@ -1,6 +1,6 @@
 package com.amidog.app.controllers;
 
-import com.amidog.app.dto.ReservationRequestDTO;
+import com.amidog.app.dtos.ReservationRequestDTO;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;

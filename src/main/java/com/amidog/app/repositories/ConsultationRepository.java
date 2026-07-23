@@ -1,11 +1,11 @@
 package com.amidog.app.repositories;
 
-import com.amidog.app.models.Client;
+import com.amidog.app.models.Consultation;
 
-import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface ConsultationRepository extends JpaRepository<Client, Long> {
+public interface ConsultationRepository extends JpaRepository<Consultation, Long> {
 }

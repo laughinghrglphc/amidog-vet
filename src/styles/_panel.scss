@@ -1,0 +1,1306 @@
+@use "sass:color";
+@use "panel/variables" as *;
+@use "panel/mixins" as *;
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.panel-page {
+  min-width: 320px;
+  min-height: 100vh;
+  background: $text;
+  color: $text;
+  font-family: "Poppins", "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    @include focus-ring;
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img,
+  svg {
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .page-shell {
+    min-height: 100vh;
+    padding: 0;
+    display: block;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .app-frame {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    border-radius: 0;
+    background: $white;
+    box-shadow: none;
+  }
+
+  .dashboard {
+    min-height: 651px;
+    padding: 12px 30px 20px;
+    background: linear-gradient(110deg, $decoration 0%, $secondary 100%);
+  }
+
+  .dashboard__surface {
+    position: relative;
+    min-height: 619px;
+    overflow: hidden;
+    padding: 30px 28px 22px;
+    border-radius: $radius-lg;
+    background: linear-gradient(108deg, color.mix($decoration, $secondary, $weight: 38%) 0%, $secondary 100%);
+  }
+
+  .dashboard__columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.51fr) minmax(0, 1fr);
+    gap: 13px;
+    margin-top: 23px;
+  }
+
+  @media (max-width: 930px) {
+    .app-frame,
+    .dashboard,
+    .dashboard__surface {
+      min-height: auto;
+    }
+
+    .dashboard__columns {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .page-shell {
+      padding: 0;
+    }
+
+    .app-frame {
+      width: 100%;
+      border-radius: 0;
+    }
+
+    .dashboard {
+      padding: 12px;
+    }
+
+    .dashboard__surface {
+      padding: 24px 14px 16px;
+      border-radius: 20px;
+    }
+  }
+
+  .header {
+    position: relative;
+    z-index: 20;
+    min-height: 80px;
+    padding: 0 26px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: $white;
+  }
+
+  .header__brand {
+    width: 184px;
+    flex: 0 0 184px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header__brand img {
+    width: 100%;
+    height: auto;
+  }
+
+  .header__nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    color: $text;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .header__nav a {
+    padding: 10px 0;
+    transition: color 160ms ease, transform 160ms ease;
+  }
+
+  .header__nav a:hover {
+    color: $buttons;
+    transform: translateY(-1px);
+  }
+
+  .menu-button {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: $buttons;
+    color: $white;
+    cursor: pointer;
+  }
+
+  .menu-button span,
+  .menu-button::before,
+  .menu-button::after {
+    content: '';
+    display: block;
+    width: 21px;
+    height: 2px;
+    margin: 5px auto;
+    border-radius: 99px;
+    background: currentColor;
+    transition: transform 160ms ease, opacity 160ms ease;
+  }
+
+  .menu-button[aria-expanded='true'] span {
+    opacity: 0;
+  }
+
+  .menu-button[aria-expanded='true']::before {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-button[aria-expanded='true']::after {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .profile {
+    position: relative;
+  }
+
+  .profile-button {
+    min-width: 116px;
+    height: 38px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: $buttons;
+    color: $white;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .profile-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba($buttons, 0.24);
+  }
+
+  .profile-button__avatar {
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: $white;
+    color: $buttons;
+  }
+
+  .profile-button__avatar svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+  }
+
+  .profile-button__arrow {
+    width: 15px;
+    height: 15px;
+    transition: transform 160ms ease;
+  }
+
+  .profile-button[aria-expanded='true'] .profile-button__arrow {
+    transform: rotate(180deg);
+  }
+
+  .profile-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 155px;
+    padding: 8px;
+    border: 1px solid rgba($text-soft, 0.18);
+    border-radius: 12px;
+    display: grid;
+    gap: 4px;
+    background: $white;
+    box-shadow: $shadow;
+  }
+
+  .profile-menu button {
+    width: 100%;
+    padding: 9px 10px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: $text;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .profile-menu button:hover {
+    background: $primary;
+    color: $buttons;
+  }
+
+  @media (max-width: 820px) {
+    .header {
+      min-height: 76px;
+      padding: 10px 18px;
+    }
+
+    .header__brand {
+      width: 160px;
+      flex-basis: 160px;
+    }
+
+    .menu-button {
+      display: block;
+      margin-left: auto;
+    }
+
+    .header__nav {
+      position: absolute;
+      top: calc(100% - 4px);
+      right: 18px;
+      left: 18px;
+      display: none;
+      margin: 0;
+      padding: 12px;
+      border: 1px solid rgba($text-soft, 0.15);
+      border-radius: 14px;
+      background: $white;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .header__nav.is-open {
+      display: grid;
+    }
+
+    .header__nav a {
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .header__nav a:hover {
+      background: $primary;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .header {
+      gap: 9px;
+      padding-inline: 12px;
+    }
+
+    .header__brand {
+      width: 136px;
+      flex-basis: 136px;
+    }
+
+    .profile-button {
+      min-width: 43px;
+      width: 43px;
+      padding: 0;
+    }
+
+    .profile-button > span:nth-child(2),
+    .profile-button__arrow {
+      display: none;
+    }
+  }
+
+  .panel-hero {
+    position: relative;
+    height: 110px;
+  }
+
+  .hero__copy {
+    position: relative;
+    z-index: 2;
+    padding-top: 13px;
+  }
+
+  .hero__copy h1 {
+    margin: 0;
+    font-size: clamp(27px, 3vw, 31px);
+    line-height: 1.1;
+    letter-spacing: -0.7px;
+    font-weight: 800;
+  }
+
+  .hero__subtitle {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .hero__subtitle p {
+    margin: 0;
+    color: $white;
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .hero__paw {
+    fill: $text-soft;
+  }
+
+  .hero__paw--top {
+    position: absolute;
+    top: -2px;
+    left: -22px;
+    width: 42px;
+    height: 37px;
+    transform: rotate(-3deg);
+  }
+
+  .hero__paw--inline {
+    width: 29px;
+    height: 39px;
+    flex: 0 0 29px;
+    margin-top: 5px;
+    transform: rotate(69deg);
+  }
+
+  .hero__visual {
+    position: absolute;
+    z-index: 1;
+    top: -23px;
+    right: 57px;
+    width: 270px;
+    height: 148px;
+  }
+
+  .hero__visual img {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    width: 255px;
+    height: 145px;
+    object-fit: contain;
+    object-position: right bottom;
+  }
+
+  .hero__star {
+    position: absolute;
+    z-index: 1;
+    color: $decoration;
+    line-height: 1;
+  }
+
+  .hero__star--one {
+    top: 35px;
+    left: -4px;
+    font-size: 34px;
+  }
+
+  .hero__star--two {
+    right: -12px;
+    bottom: 17px;
+    font-size: 30px;
+  }
+
+  @media (max-width: 790px) {
+    .panel-hero {
+      height: 218px;
+    }
+
+    .hero__visual {
+      top: 70px;
+      right: 10px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .panel-hero {
+      height: 205px;
+    }
+
+    .hero__subtitle {
+      max-width: 82%;
+    }
+
+    .hero__subtitle p {
+      font-size: 15px;
+    }
+
+    .hero__visual {
+      width: 220px;
+      right: -4px;
+    }
+
+    .hero__visual img {
+      width: 210px;
+    }
+  }
+
+  .summary {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .summary-card {
+    min-height: 116px;
+    padding: 18px;
+    border: 1px solid rgba($text-soft, 0.08);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: $form;
+    box-shadow: 0 8px 22px rgba(91, 61, 35, 0.08);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow;
+  }
+
+  .summary-card__icon {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: rgba($border, 0.55);
+    color: $text-soft;
+  }
+
+  .summary-card__icon img {
+    width: 39px;
+    height: 39px;
+    object-fit: contain;
+  }
+
+  .summary-card__icon svg {
+    width: 34px;
+    height: 34px;
+    fill: currentColor;
+    transform: rotate(-6deg);
+  }
+
+  .summary-card__content {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .summary-card__title {
+    color: $text;
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .summary-card__detail {
+    margin-top: 4px;
+    color: $buttons;
+    font-size: 15px;
+    line-height: 1.1;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .summary-card__value {
+    margin-top: 3px;
+    color: $buttons;
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  .summary-card--next .summary-card__value {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.15;
+  }
+
+  .summary-card__content button {
+    @include text-button;
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  .summary-card--next .summary-card__content button {
+    margin-top: 7px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba($border, 0.7);
+  }
+
+  @media (max-width: 790px) {
+    .summary {
+      grid-template-columns: 1fr;
+    }
+
+    .summary-card {
+      min-height: 104px;
+    }
+  }
+
+  .panel {
+    min-height: 342px;
+    padding: 0 13px 18px;
+    border: 1px solid rgba($text-soft, 0.08);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    background: $form;
+    box-shadow: 0 8px 22px rgba(91, 61, 35, 0.08);
+  }
+
+  .panel__header {
+    min-height: 58px;
+    padding: 0 3px;
+    border-bottom: 1px solid rgba($text-soft, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .panel__header h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: $text;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .panel__header h2 img {
+    width: 29px;
+    height: 29px;
+    object-fit: contain;
+  }
+
+  .panel__header h2 svg {
+    width: 31px;
+    height: 31px;
+    fill: $text-soft;
+    transform: rotate(-4deg);
+  }
+
+  .panel__header button {
+    @include text-button;
+    flex: 0 0 auto;
+    font-size: 10px;
+  }
+
+  .panel__body {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .panel__body--appointments {
+    flex: 1;
+  }
+
+  .outline-action {
+    width: 100%;
+    min-height: 38px;
+    margin-top: auto;
+    border: 1.5px solid $buttons;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: $form;
+    color: $buttons;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .outline-action img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  .outline-action:hover {
+    background: $buttons;
+    color: $white;
+    transform: translateY(-1px);
+  }
+
+  .empty-state {
+    flex: 1;
+    min-height: 160px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 8px;
+    color: $text-soft;
+  }
+
+  .empty-state img {
+    width: 36px;
+  }
+
+  .empty-state p {
+    margin: 0;
+  }
+
+  @media (max-width: 930px) {
+    .panel {
+      min-height: 325px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .panel {
+      padding-inline: 10px;
+    }
+
+    .panel__header h2 {
+      max-width: 75%;
+      font-size: 14px;
+      white-space: normal;
+    }
+  }
+
+  .appointment-card {
+    min-height: 89px;
+    padding: 8px 10px;
+    border: 1px solid rgba($text-soft, 0.24);
+    border-radius: 9px;
+    display: grid;
+    grid-template-columns: minmax(126px, 1.35fr) minmax(73px, 0.85fr) minmax(78px, 0.9fr) minmax(68px, 0.7fr) minmax(58px, 0.55fr) 105px;
+    align-items: center;
+    background: $form;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .appointment-card:hover {
+    border-color: $border;
+    box-shadow: 0 7px 18px rgba(91, 61, 35, 0.07);
+  }
+
+  .appointment-card__pet {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pet-avatar {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    border: 1px solid rgba($decoration, 0.5);
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    place-items: end center;
+    background: rgba($primary, 0.72);
+  }
+
+  .pet-avatar img {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .appointment-card__identity {
+    min-width: 0;
+  }
+
+  .appointment-card h3,
+  .registered-pet h3 {
+    margin: 0;
+    color: $text;
+    font-size: 14px;
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .appointment-card__pet p,
+  .registered-pet__info > p {
+    margin: 5px 0 4px;
+    color: $text-soft;
+    font-size: 10px;
+    line-height: 1.1;
+  }
+
+  .pill {
+    display: inline-flex;
+    min-height: 18px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+    background: rgba($border, 0.72);
+    color: $buttons;
+    font-size: 9px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .appointment-card__data {
+    align-self: stretch;
+    min-width: 0;
+    padding: 5px 9px;
+    border-left: 1px solid rgba($text-soft, 0.22);
+  }
+
+  .appointment-card__data span {
+    color: $text-soft;
+    font-size: 8px;
+    line-height: 1;
+  }
+
+  .appointment-card__data p {
+    margin: 5px 0 0;
+    color: $text;
+    font-size: 10px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .cancel-button {
+    width: 105px;
+    min-height: 35px;
+    padding: 0 10px;
+    border: 1.5px solid $secondary;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: $form;
+    color: $secondary;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 160ms ease, color 160ms ease;
+  }
+
+  .cancel-button svg {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+  }
+
+  .cancel-button:hover {
+    background: $secondary;
+    color: $white;
+  }
+
+  @media (max-width: 1050px) and (min-width: 931px) {
+    .appointment-card {
+      grid-template-columns: minmax(120px, 1.3fr) minmax(70px, 0.85fr) minmax(76px, 0.9fr) minmax(62px, 0.65fr) 101px;
+    }
+
+    .appointment-card__time {
+      display: none;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .appointment-card {
+      min-height: 170px;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .appointment-card__pet {
+      grid-column: 1 / -1;
+    }
+
+    .appointment-card__data {
+      border-left: 0;
+      border-top: 1px solid rgba($text-soft, 0.22);
+      padding: 8px 0 0;
+    }
+
+    .cancel-button {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+  }
+
+  .registered-pet {
+    min-height: 90px;
+    padding: 8px 13px;
+    border: 1px solid rgba($text-soft, 0.24);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    background: $form;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .registered-pet:hover {
+    border-color: $border;
+    box-shadow: 0 7px 18px rgba(91, 61, 35, 0.07);
+  }
+
+  .registered-pet--compact {
+    box-shadow: none;
+  }
+
+  .pet-avatar--large {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+
+  .registered-pet__info {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .registered-pet__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  .registered-pet__age {
+    color: $text;
+  }
+
+  .pill--status {
+    gap: 3px;
+  }
+
+  .pill--status svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .chevron-button {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    border: 0;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    color: $text-soft;
+    cursor: pointer;
+  }
+
+  .chevron-button svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .chevron-button:hover {
+    background: rgba($border, 0.35);
+    color: $buttons;
+  }
+
+  @media (max-width: 420px) {
+    .registered-pet {
+      gap: 10px;
+    }
+
+    .registered-pet__meta {
+      gap: 5px;
+    }
+  }
+
+  .footer {
+    min-height: 57px;
+    padding: 10px 32px 10px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    background: linear-gradient(110deg, $primary 0%, $secondary 100%);
+    color: $text;
+    font-size: 12px;
+  }
+
+  .footer p {
+    margin: 0;
+  }
+
+  .footer a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: $white;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .footer img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 650px) {
+    .footer {
+      min-height: 72px;
+      padding: 14px 18px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .modal-backdrop {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    padding: 24px;
+    display: grid;
+    place-items: center;
+    background: rgba($text, 0.64);
+    backdrop-filter: blur(4px);
+  }
+
+  .modal {
+    width: min(520px, 100%);
+    max-height: min(720px, calc(100vh - 48px));
+    overflow: hidden;
+    border-radius: $radius-md;
+    background: $white;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+    animation: modal-in 180ms ease both;
+  }
+
+  .modal--wide {
+    width: min(930px, 100%);
+  }
+
+  .modal__header {
+    min-height: 64px;
+    padding: 14px 18px 14px 22px;
+    border-bottom: 1px solid rgba($text-soft, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: $primary;
+  }
+
+  .modal__header h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .modal__header button {
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: $white;
+    color: $secondary;
+    cursor: pointer;
+  }
+
+  .modal__header button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .modal__body {
+    max-height: calc(100vh - 136px);
+    overflow: auto;
+    padding: 22px;
+  }
+
+  .modal-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .modal--wide .appointment-card {
+    grid-template-columns: minmax(132px, 1.35fr) minmax(90px, 0.9fr) minmax(110px, 1fr) minmax(88px, 0.72fr) minmax(64px, 0.58fr) 105px;
+  }
+
+  .modal-empty {
+    margin: 20px 0;
+    color: $text-soft;
+    text-align: center;
+  }
+
+  .dialog-form {
+    display: grid;
+    gap: 15px;
+  }
+
+  .dialog-form label {
+    display: grid;
+    gap: 7px;
+    color: $text;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .dialog-form input,
+  .dialog-form select {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 12px;
+    border: 1.5px solid $border;
+    border-radius: $radius-sm;
+    background: $step;
+    color: $text;
+    outline: none;
+    transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .dialog-form input:focus,
+  .dialog-form select:focus {
+    border-color: $buttons;
+    background: $white;
+    box-shadow: 0 0 0 3px rgba($buttons, 0.14);
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .form-actions {
+    margin-top: 6px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .button {
+    min-height: 42px;
+    padding: 0 18px;
+    border: 1.5px solid $buttons;
+    border-radius: 9px;
+    background: $buttons;
+    color: $white;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  }
+
+  .button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba($buttons, 0.22);
+  }
+
+  .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .button--ghost {
+    background: $white;
+    color: $buttons;
+  }
+
+  .button--secondary {
+    border-color: $secondary;
+    background: $secondary;
+  }
+
+  .confirmation p {
+    margin: 0 0 22px;
+    color: $text-soft;
+    line-height: 1.6;
+  }
+
+  .pet-detail {
+    display: grid;
+    gap: 18px;
+  }
+
+  .pet-detail dl {
+    margin: 0;
+    border: 1px solid rgba($text-soft, 0.16);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .pet-detail dl div {
+    padding: 11px 14px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 12px;
+  }
+
+  .pet-detail dl div:nth-child(odd) {
+    background: $step;
+  }
+
+  .pet-detail dt {
+    color: $text-soft;
+    font-size: 12px;
+  }
+
+  .pet-detail dd {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .pet-detail__actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .toast {
+    position: fixed;
+    z-index: 120;
+    right: 24px;
+    bottom: 24px;
+    max-width: min(360px, calc(100vw - 48px));
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: $white;
+    background: $buttons;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(14px);
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .toast.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (max-width: 760px) {
+    .modal--wide .appointment-card {
+      min-height: 170px;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .modal--wide .appointment-card__pet,
+    .modal--wide .cancel-button {
+      grid-column: 1 / -1;
+    }
+
+    .modal--wide .appointment-card__data {
+      border-left: 0;
+      border-top: 1px solid rgba($text-soft, 0.22);
+      padding: 8px 0 0;
+    }
+
+    .modal--wide .cancel-button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .modal-backdrop {
+      padding: 10px;
+    }
+
+    .modal {
+      max-height: calc(100vh - 20px);
+    }
+
+    .modal__body {
+      padding: 16px;
+    }
+
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+      flex-direction: column-reverse;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    .pet-detail dl div {
+      grid-template-columns: 86px 1fr;
+    }
+  }
+}

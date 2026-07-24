@@ -1,0 +1,355 @@
+.panel-admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #FAFAFA;
+  color: #111418;
+  font-family: 'Inter', sans-serif;
+
+  // SIDEBAR MÁS COMPACTO
+  .sidebar {
+    width: 210px;
+    background: linear-gradient(180deg, #ffd082 0%, #f68b35 100%);
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-shrink: 0;
+
+    .brand-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+      margin-top: 5px;
+
+      img {
+        width: 100%;
+        max-width: 120px;
+        height: auto;
+      }
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+        padding: 7px 10px;
+        border-radius: 6px;
+        color: #1B2025;
+        font-size: 12px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
+
+        &.active {
+          background-color: #19A794; 
+          font-weight: 700;
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+
+  // Main Layout
+  .main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    // Header más delgado
+    .header {
+      background: #FCFCFC;
+      border-bottom: 1px solid #F3D9BC;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .search-bar {
+        background: #FFFFFF;
+        border: 1px solid #D6DDE7;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 260px;
+        color: #687386;
+        font-size: 12px;
+        outline: none;
+
+        &:focus {
+          border-color: #08A89E;
+        }
+      }
+
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .notification-badge {
+          position: relative;
+          cursor: pointer;
+          font-size: 15px;
+
+          .badge-count {
+            background: #FF7100;
+            color: #FFFFFF;
+            font-size: 9px;
+            font-weight: 700;
+            border-radius: 50%;
+            padding: 1px 4px;
+            position: absolute;
+            top: -5px;
+            right: -6px;
+          }
+        }
+
+        .user-profile {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .user-info {
+            text-align: right;
+            .user-name { font-weight: bold; font-size: 12px; color: #333; }
+            .user-role { font-size: 10px; color: #888; }
+          }
+        }
+      }
+    }
+
+    // Content Body Ajustado
+    .content {
+      padding: 12px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .welcome-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          font-size: 18px;
+          font-weight: 700;
+          color: #111418;
+          margin-bottom: 1px;
+        }
+
+        p {
+          font-size: 12px;
+          color: #687386;
+        }
+
+        .date-pill {
+          background: #FFFFFF;
+          border: 1px solid #E8E8E8;
+          padding: 4px 10px;
+          border-radius: 20px;
+          font-size: 11px;
+          font-weight: 600;
+          color: #111418;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #19A794;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      // Fila Superior (KPIs + Imagen) Compactas
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+
+        .kpi-card {
+          background: #FFFFFF;
+          border: 1px solid #F2D9BE;
+          border-radius: 8px;
+          padding: 10px 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+
+          .kpi-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #111418;
+          }
+
+          .kpi-value {
+            font-size: 20px;
+            font-weight: 700;
+
+            &.teal { color: #08A89E; }
+            &.orange-light { color: #FF9500; }
+            &.orange-dark { color: #FF7100; }
+          }
+
+          .kpi-subtext {
+            font-size: 10px;
+            color: #687386;
+          }
+        }
+
+        .kpi-hero-image {
+          background: #FFFFFF;
+          border: 1px solid #F2D9BE;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          padding: 0;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      // Fila Media: Gráfico y Tabla más reducidos
+      .dashboard-sections {
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap: 10px;
+
+        .card {
+          background: #FFFFFF;
+          border: 1px solid #F2D9BE;
+          border-radius: 8px;
+          padding: 12px;
+
+          .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+
+            .card-title {
+              font-size: 12px;
+              font-weight: 700;
+              color: #111418;
+            }
+
+            .link-action {
+              font-size: 11px;
+              color: #08A89E;
+              text-decoration: none;
+              cursor: pointer;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          .chart-placeholder {
+             height: 120px; 
+             display: flex; 
+             align-items: center; 
+             justify-content: center; 
+             color: #687386;
+             background: #FAFAFA;
+             border-radius: 6px;
+             border: 1px dashed #D6DDE7;
+             font-size: 11px;
+          }
+
+          .table-container {
+            width: 100%;
+            border-collapse: collapse;
+
+            th {
+              font-size: 10px;
+              font-weight: 700;
+              text-align: left;
+              padding: 4px 4px;
+              border-bottom: 1px solid #E8E8E8;
+            }
+
+            td {
+              padding: 6px 4px;
+              font-size: 11px;
+              border-bottom: 1px solid #E8E8E8;
+
+              .pet-name { font-weight: 700; font-size: 11px; }
+              .pet-type { font-size: 9px; color: #687386; }
+
+              .status-badge {
+                display: inline-block;
+                padding: 2px 5px;
+                border-radius: 10px;
+                font-size: 9px;
+                font-weight: 500;
+                text-align: center;
+
+                &.confirmada {
+                  background: #D9F4F1;
+                  color: #08A89E;
+                }
+
+                &.pendiente {
+                  background: #FFF2CC;
+                  color: #F39A00;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Fila Inferior Súper Compacta
+      .dashboard-bottom-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+
+        .card {
+          background: #FFFFFF;
+          border: 1px solid #F2D9BE;
+          border-radius: 8px;
+          padding: 12px;
+
+          .card-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #111418;
+          }
+        }
+
+        .photo-card {
+          background: #fae5d3;
+          padding: 0;
+          overflow: hidden;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

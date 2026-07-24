@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+@mixin focus-ring {
+  outline: 3px solid rgba($buttons, 0.25);
+  outline-offset: 2px;
+}
+
+@mixin text-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: $buttons;
+  font: inherit;
+  cursor: pointer;
+}

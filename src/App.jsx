@@ -8,6 +8,7 @@ import Reservation from './pages/Reservation'
 import Calendario from './pages/Calendario'
 import Confirmacion from './pages/Confirmacion'
 import Panel from './pages/Panel'
+import PanelAdmin from './pages/PanelAdmin'
 
 function ScrollManager() {
   const location = useLocation()
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/calendario" element={<Calendario />} />
         <Route path="/confirmacion" element={<Confirmacion />} />
         <Route path="/panel" element={<Panel />} />
+        <Route path="/panel-admin" element={<PanelAdmin />} />
         <Route path="/pages/nosotros.html" element={<Navigate to="/nosotros" replace />} />
         <Route path="/pages/contacto.html" element={<Navigate to="/contacto" replace />} />
         <Route path="/pages/login.html" element={<Navigate to="/login" replace />} />

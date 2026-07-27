@@ -1,5 +1,5 @@
-import maxImage from '../../assets/panel/max.png'
-import annieImage from '../../assets/panel/annie.png'
+import maxImage from '/assets/img/max.png'
+import annieImage from '/assets/img/annie.png'
 import { CheckCircleIcon, ChevronRightIcon } from './Icons'
 
 const images = { max: maxImage, annie: annieImage }

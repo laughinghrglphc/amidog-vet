@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import logo from '../../assets/panel/logo-amidog.png'
+import logo from '/assets/img/logo-amidog.png'
 import { ChevronDownIcon, UserIcon } from './Icons'
 
 function PanelHeader({ onProfileAction }) {

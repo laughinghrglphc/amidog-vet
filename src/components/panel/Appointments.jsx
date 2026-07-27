@@ -1,4 +1,4 @@
-import calendar from '../../assets/panel/calendar.png'
+import calendar from '/assets/img/calendar.png'
 import AppointmentCard from './AppointmentCard'
 
 function Appointments({ appointments, onCancel, onViewAll, onAdd }) {

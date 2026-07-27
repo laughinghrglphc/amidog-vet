@@ -1,4 +1,4 @@
-import petsHero from '../../assets/panel/pets-hero.png'
+import petsHero from '/assets/img/pets-hero.png'
 import { PawTrailIcon } from './Icons'
 
 function Hero() {

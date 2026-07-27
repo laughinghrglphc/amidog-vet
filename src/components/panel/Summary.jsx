@@ -1,5 +1,5 @@
-import calendar from '../../assets/panel/calendar.png'
-import clock from '../../assets/panel/clock.png'
+import calendar from '/assets/img/calendar.png'
+import clock from '/assets/img/clock.png'
 import SummaryCard from './SummaryCard'
 import { PawTrailIcon } from './Icons'
 import { formatShortDate } from '../../utils/panelDate'

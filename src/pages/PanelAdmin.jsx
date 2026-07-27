@@ -4,7 +4,7 @@ import { HeaderAdmin } from '../components/panel-admin/HeaderAdmin.jsx';
 import { KpiCardAdmin } from '../components/panel-admin/KpiCardAdmin.jsx';
 import { BookingsTableAdmin } from '../components/panel-admin/BookingsTableAdmin.jsx';
 import { Icon } from '../components/panel-admin/Icon.jsx';
-import petsHero from '../assets/panel/pets-hero.png';
+import petsHero from '/assets/img/pets-hero.png';
 
 const chartDatasets = {
   'Esta semana': {

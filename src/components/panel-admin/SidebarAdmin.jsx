@@ -1,5 +1,5 @@
 import React from 'react';
-import logoAmidog from '../../assets/panel/logo-amidog.png';
+import logoAmidog from '/assets/img/logo-amidog.png';
 import { Icon } from './Icon.jsx';
 
 const navItems = [

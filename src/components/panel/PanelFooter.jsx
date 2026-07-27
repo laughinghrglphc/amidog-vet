@@ -1,4 +1,4 @@
-import instagram from '../../assets/panel/instagram.png'
+import instagram from '/assets/img/instagram.png'
 
 function PanelFooter() {
   return (

@@ -1,5 +1,5 @@
-import maxImage from '../../assets/panel/max.png'
-import annieImage from '../../assets/panel/annie.png'
+import maxImage from '/assets/img/max.png'
+import annieImage from '/assets/img/annie.png'
 import { CloseCircleIcon } from './Icons'
 import { formatDate } from '../../utils/panelDate'
 

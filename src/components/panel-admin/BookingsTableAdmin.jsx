@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from './Icon.jsx';
-import dogImg from '../../assets/panel/max.png';
-import catImg from '../../assets/panel/annie.png';
+import dogImg from '/assets/img/max.png';
+import catImg from '/assets/img/annie.png';
 
 const petImages = {
   Luna: dogImg,

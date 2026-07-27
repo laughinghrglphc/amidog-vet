@@ -1,4 +1,15 @@
 import React from 'react';
+import { Icon } from './Icon.jsx';
+import dogImg from '../../assets/panel/max.png';
+import catImg from '../../assets/panel/annie.png';
+
+const petImages = {
+  Luna: dogImg,
+  Milo: catImg,
+  Rocky: dogImg,
+  Nala: catImg,
+  Max: dogImg,
+};
 
 const mockBookings = [
   { pet: 'Luna', type: 'Perro', owner: 'María González', service: 'Consulta general', time: 'Hoy, 11:00', status: 'Confirmada' },
@@ -11,8 +22,11 @@ const mockBookings = [
 export const BookingsTableAdmin = () => (
   <div className="card">
     <div className="card-header">
-      <h3 className="card-title">Próximas reservas</h3>
-      <a className="link-action">Ver todas</a>
+      <div className="card-header-left">
+        <Icon name="calendar" size={18} />
+        <h3 className="card-title">Próximas reservas</h3>
+      </div>
+      <a className="link-action" href="#" onClick={(e) => e.preventDefault()}>Ver todas</a>
     </div>
     <table className="table-container">
       <thead>
@@ -28,8 +42,13 @@ export const BookingsTableAdmin = () => (
         {mockBookings.map((b, i) => (
           <tr key={i}>
             <td>
-              <div className="pet-name">{b.pet}</div>
-              <div className="pet-type">{b.type}</div>
+              <div className="pet-cell">
+                <img className="pet-avatar" src={petImages[b.pet]} alt={b.pet} />
+                <div className="pet-info">
+                  <span className="pet-name">{b.pet}</span>
+                  <span className="pet-type">{b.type}</span>
+                </div>
+              </div>
             </td>
             <td>{b.owner}</td>
             <td>{b.service}</td>

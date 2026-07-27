@@ -27,8 +27,8 @@ public class Client {
     private String phone;
 
     // Useful for getting a list of the carts of the client
-    @OneToMany(mappedBy = "client")
-    private List<Cart> carts;
+    // @OneToMany(mappedBy = "client")
+    // private List<Cart> carts;
 
     // Useful for a list of reservations of the client
     @OneToMany(mappedBy = "client")

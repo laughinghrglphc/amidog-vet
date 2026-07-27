@@ -34,3 +34,8 @@ build/
 
 # Environment variables
 .env
+
+## Varios
+node_modules
+.editorconfig
+

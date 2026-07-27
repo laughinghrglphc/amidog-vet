@@ -26,9 +26,7 @@ public class SpaController {
      * directamente por Spring Boot desde /static/, sin llegar a este controlador.
      */
     @RequestMapping(value = {
-        "/",
-        "/{path:[^\\.]*}",
-        "/{path:[^\\.]*}/**"
+        "/", // localhhost.com/ -> localhost.com/index.html
     })
     public String forwardToIndex() {
         return "forward:/index.html";

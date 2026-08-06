@@ -1,0 +1,11 @@
+import '@testing-library/jest-dom/vitest'
+import { cleanup } from '@testing-library/react'
+import { afterEach, vi } from 'vitest'
+
+globalThis.fetch = vi.fn()
+
+afterEach(() => {
+  cleanup()
+  vi.restoreAllMocks()
+  globalThis.fetch = vi.fn()
+})

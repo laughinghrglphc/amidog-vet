@@ -1,0 +1,174 @@
+@use "variables";
+
+// ===== CÍRCULO DE MASCOTA (con estrellas y patita) =====
+.mascota-circular {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__img {
+    position: relative;
+    z-index: 2;
+    width: 108%;
+    height: auto;
+    bottom: -15px;
+    object-fit: contain;
+  }
+
+  &__star {
+    position: absolute;
+    z-index: 3;
+    height: auto;
+
+    &--top {
+      width: 8%;
+      top: 5.7%;
+      left: 10.2%;
+      transform: rotate(-15deg);
+    }
+
+    &--bottom {
+      width: 9.1%;
+      bottom: 31.8%;
+      right: -5.7%;
+      transform: rotate(20deg);
+    }
+  }
+
+  &__paw {
+    position: absolute;
+    z-index: 3;
+    width: 8.6%;
+    height: auto;
+    bottom: 21.6%;
+    right: -4.5%;
+    transform: rotate(160deg);
+    filter: brightness(0.3);
+  }
+}
+
+/* ===============================================
+   BOTONES (.btn, .btn-primary, .btn-secondary)
+   NOTA: existía una definición duplicada y con
+   estilos distintos en _layout.scss y en este
+   archivo. Se dejó una sola versión (la que
+   coincide con el diseño final del banner).
+================================================ */
+.btn {
+    min-width: 175px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+    border: none;
+    border-radius: 13px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(37, 37, 37, 0.16);
+    }
+
+    &-primary {
+        color: variables.$white;
+        background: linear-gradient(90deg, variables.$teal-color 0%, #0fa29c 100%);
+    }
+
+    &-secondary {
+        color: #000000;
+        background: variables.$off-white;
+    }
+}
+
+.patita-izq {
+  position: absolute;
+  width: 32px;
+  height: auto;
+  top: -12px;
+  left: -20px;
+  transform: rotate(-5deg);
+}
+
+.patita-der {
+  display: inline-block;
+  vertical-align: middle;
+  width: 32px;
+  height: auto;
+  margin-left: -6px;
+  margin-bottom: -6px;
+  transform: rotate(160deg);
+}
+
+/* ===============================================
+   BADGE (barrita con corazón y frase)
+================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: variables.$white;
+  color: variables.$text-dark;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+/* ===============================================
+   TARJETA DE SERVICIO (.tarjeta-servicio)
+================================================ */
+.tarjeta-servicio {
+    min-height: 220px;
+    padding: 20px 25px 30px;
+    text-align: center;
+    background: variables.$white;
+    border-radius: 26px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(37, 37, 37, 0.15);
+    }
+
+    .icono-servicio {
+        width: 63px;
+        height: 63px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        border-radius: 50%;
+        background: #b5f0f0;
+        font-size: 1.938rem;
+    }
+
+    h3 {
+        margin-top: 20px;
+        color: variables.$text-dark;
+        font-size: 1.438rem;
+        font-weight: 700;
+    }
+
+    p {
+        margin-top: 16px;
+        color: variables.$text-dark;
+        font-size: 1.063rem;
+        font-weight: 500;
+    }
+}
